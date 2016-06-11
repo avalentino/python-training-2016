@@ -2277,7 +2277,20 @@ lists (heterogeneous sequences)
 
 \begin_layout Itemize
 dictionaries or mapping types (associative arrays implemented as hash-maps:
- O(0) access)
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+$
+\backslash
+mathcal{O}(1)$
+\end_layout
+
+\end_inset
+
+  access)
 \end_layout
 
 \begin_layout Itemize
@@ -4410,7 +4423,7 @@ Other
 tuple
 \family default
 \series default
- tools
+ tools (1/2)
 \end_layout
 
 \end_inset
@@ -4441,7 +4454,12 @@ Out[17]: (1, 2, 'x', 'y')
 
 \begin_layout Plain Layout
 
-In [18]: len(t)                     # --> 4
+In [18]: len(t)
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[18]: 4
 \end_layout
 
 \begin_layout Plain Layout
@@ -4486,18 +4504,111 @@ In [21]: t[1:3]                     # slicing
 Out[21]: (2, 'x')                   # output is a tuple
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Other 
+\family typewriter
+\series bold
+tuple
+\family default
+\series default
+ tools (2/2)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [22]: t
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[22]: (1, 2, 'x', 'y')
+\end_layout
+
 \begin_layout Plain Layout
 
 \end_layout
 
 \begin_layout Plain Layout
 
-In [22]: a, b, c, d = t             # unpacking
+In [23]: a, b, c, d = t             # unpacking
 \end_layout
 
 \begin_layout Plain Layout
 
-In [23]: bool(t), bool(empty_tuple) # --> (True, False)
+In [24]: a
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[24]: 1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [25]: bool(t)
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[25]: Ture
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [26]: bool(empty_tuple)
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[26]: False
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [27]: ('a', 2) < ('a', 0)        # lexicographical
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[27]: False
 \end_layout
 
 \end_inset
@@ -5056,12 +5167,12 @@ In [12]: l.remove('b')
 
 \begin_layout Plain Layout
 
-In [11]: l
+In [13]: l
 \end_layout
 
 \begin_layout Plain Layout
 
-Out[11]: ['a', 1, 2]
+Out[13]: ['a', 1, 2]
 \end_layout
 
 \end_inset
@@ -5084,6 +5195,1115 @@ Other
 \family typewriter
 \series bold
 list
+\family default
+\series default
+ tools (1/3)
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [14]: [1, 2] + ['x', 'y']  # concatenation
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[14]: [1, 2, 'x', 'y']
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [15]: [1, 2] + ('x', 'y')
+\end_layout
+
+\begin_layout Plain Layout
+
+TypeError: can only concatenate list (not "tuple") to list 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [16]: len(l)
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[16]: 4
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [17]: 2 in l               # contains
+\end_layout
+
+\begin_layout Plain Layout
+
+Our[17]: True
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [18]: l[1]                 # indexing
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[18]: 2
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [19]: l[1:3]               # slicing
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[19]: (2, 'x')             # output is a tuple
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Other 
+\family typewriter
+\series bold
+list
+\family default
+\series default
+ tools (2/3)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [20]: a, b, c, d = [1, 2, 'x', 'y']  # unpacking
+\end_layout
+
+\begin_layout Plain Layout
+
+In [21]: b
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[21]: 2
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [22]: l = [1, 2, 'x', 'y']
+\end_layout
+
+\begin_layout Plain Layout
+
+In [23]: del l[1]
+\end_layout
+
+\begin_layout Plain Layout
+
+In [24]: l
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[24]: [1, 'x', 'y']
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [25]: l = [1, 2, 'x', 'y']
+\end_layout
+
+\begin_layout Plain Layout
+
+In [26]: del l[1:3]
+\end_layout
+
+\begin_layout Plain Layout
+
+In [27]: l
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[27]: [1, 'y']
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [26]: l = [1, 2, 'x', 'y']
+\end_layout
+
+\begin_layout Plain Layout
+
+In [27]: del l[:]             # equivalent to l.clear()
+\end_layout
+
+\begin_layout Plain Layout
+
+In [28]: l
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[28]: []
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Other 
+\family typewriter
+\series bold
+list
+\family default
+\series default
+ tools (3/3)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [28]: bool(l)
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[28]: True
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [29]: bool([])
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[29]: False
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [27]: ['a', 2] < ['a', 0]        # lexicographical
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[27]: False
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [28]: (1, 2) == [1, 2]           # different types
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[28]: False
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [29]: (1, 2) == tuple([1, 2])
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[29]: True
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+dict
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Dictionaries (
+\family typewriter
+\series bold
+dict
+\family default
+\series default
+) are associative array (mapping types)
+\end_layout
+
+\begin_layout Itemize
+Dictionaries are 
+\series bold
+heterogeneous
+\series default
+ containers (can store elements of different type)
+\end_layout
+
+\begin_layout Itemize
+Unordered (but exists the 
+\family typewriter
+\series bold
+collections.OrderedDict
+\family default
+\series default
+ type)
+\end_layout
+
+\begin_layout Itemize
+...
+ and randomized (can't rely on the key order)
+\end_layout
+
+\begin_layout Itemize
+Implemented as hash-maps
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Unique keys
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+$
+\backslash
+mathcal{O}(1)$
+\end_layout
+
+\end_inset
+
+ access
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Keys must be 
+\emph on
+hashable
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+immutable types are usually OK (numbers, strings, etc.)
+\end_layout
+
+\begin_layout Itemize
+tuples or frozensets must only contain immutable object
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+dict
+\family default
+ 
+\series default
+constructors and literals
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [1]: d = {'a': 1, 'b': 2, 3: 'ciao'}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [2]: d = {}    # empty dict
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [3]: d = dict(a=1, b=2)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [4]: # dict(sequence of pairs)
+\end_layout
+
+\begin_layout Plain Layout
+
+In [5]: d = dict([('a', 1), ('b', 2), (3, 'ciao')])
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[5]: {3: 'ciao', 'b': 2, 'a': 1}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [6]: dict.fromkeys(['a','b', 3])
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[6]: {3: None, 'b': None, 'a': None}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [7]: dict.fromkeys(['a','b', 3], 'zero')
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[7]: {3: 'zero', 'b': 'zero', 'a': 'zero'}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+dict
+\family default
+\series default
+ indexing (1/2)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [1]: d = {'a': 1, 'b': 2}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [2]: d['b']
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[2]: 2
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [3]: d['unexinsing key']
+\end_layout
+
+\begin_layout Plain Layout
+
+KeyError: 'unexinsing key'	
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [4]: print(d.get('unexinsing key'))
+\end_layout
+
+\begin_layout Plain Layout
+
+None
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [5]: d[list()] = [1, 2, 3]
+\end_layout
+
+\begin_layout Plain Layout
+
+TypeError: unhashable type: 'list' 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+dict
+\family default
+\series default
+ indexing (2/2)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [6]: d['new key'] = [1, 2, 3]
+\end_layout
+
+\begin_layout Plain Layout
+
+In [7]: d
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[7]: {'b': 2, 'a': 1, 'new key': [1, 2, 3]} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [8]: d['new key'] = None    # repalces existing value
+\end_layout
+
+\begin_layout Plain Layout
+
+In [9]: d
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[9]: {'b': 2, 'a': 1, 'new key': None} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [10]: del d['new key']
+\end_layout
+
+\begin_layout Plain Layout
+
+In [11]: d
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[11]: {'b': 2, 'a': 1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+dict
+\family default
+\series default
+ methods
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+0.5
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Python 3
+\end_layout
+
+\begin_layout Itemize
+keys (--> iterator)
+\end_layout
+
+\begin_layout Itemize
+values (--> iterator)
+\end_layout
+
+\begin_layout Itemize
+items (--> iterator)
+\end_layout
+
+\begin_layout Standard
+Python 2
+\end_layout
+
+\begin_layout Itemize
+keys (--> list)
+\end_layout
+
+\begin_layout Itemize
+values (--> list)
+\end_layout
+
+\begin_layout Itemize
+items (--> list)
+\end_layout
+
+\begin_layout Itemize
+iterkeys (--> iterator)
+\end_layout
+
+\begin_layout Itemize
+itervalues (--> iterator)
+\end_layout
+
+\begin_layout Itemize
+iteritems (--> iterator)
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+0.5
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+fromkeys (static method)
+\end_layout
+
+\begin_layout Itemize
+copy
+\end_layout
+
+\begin_layout Itemize
+get
+\end_layout
+
+\begin_layout Itemize
+
+\color red
+update
+\end_layout
+
+\begin_layout Itemize
+
+\color red
+setdefault
+\end_layout
+
+\begin_layout Itemize
+
+\color red
+pop
+\end_layout
+
+\begin_layout Itemize
+
+\color red
+popitem
+\end_layout
+
+\begin_layout Itemize
+
+\color red
+clear
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+dict
+\family default
+\series default
+ method examples (1/2)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [1]: d = {'a': 1, 'b': 2}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [2]: list(d.keys())
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[2]: ['b', 'a']
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [3]: list(d.values())
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[3]: [2, 1]                # match the order of keys
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [4]: list(d.items())
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[4]: [('b', 2), ('a', 1)]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [5]: for k, v in d.items():
+\end_layout
+
+\begin_layout Plain Layout
+
+   ...:     print('key={!r}, value={!r}'.format(k, v))
+\end_layout
+
+\begin_layout Plain Layout
+
+key='b', value=2
+\end_layout
+
+\begin_layout Plain Layout
+
+key='a', value=1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+dict
+\family default
+\series default
+ method examples (2/2)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [6]: d.update({'aa': 11, 'bb': 22})    # --> None
+\end_layout
+
+\begin_layout Plain Layout
+
+In [7]: d
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[7]: {'b': 2, 'a': 1, 'bb': 22, 'aa': 11}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# if key not in d:
+\end_layout
+
+\begin_layout Plain Layout
+
+#     d[key] = default
+\end_layout
+
+\begin_layout Plain Layout
+
+# return d[key]
+\end_layout
+
+\begin_layout Plain Layout
+
+In [8]: d.setdefault('new key', 'default value')
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[8]: 'default value'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [9]: d.pop('new key')
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[9]: 'default value'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [10]: d.popitem()
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[10]: ('b', 2)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [11]: d
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[11]: {'a': 1, 'bb': 22, 'aa': 11}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Other 
+\family typewriter
+\series bold
+dict
 \family default
 \series default
  tools
@@ -5103,26 +6323,12 @@ status open
 
 \begin_layout Plain Layout
 
-In [17]: [1, 2] + ['x', 'y']        # concatenation
+In [12]: len(d)    # d = {'a': 1, 'bb': 22, 'aa': 11}
 \end_layout
 
 \begin_layout Plain Layout
 
-Out[17]: [1, 2, 'x', 'y']
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-In [17]: [1, 2] + ('x', 'y')        # no concatenation with tuples
-\end_layout
-
-\begin_layout Plain Layout
-
-TypeError: can only concatenate list (not "tuple") to list 
+Out[12]: 3
 \end_layout
 
 \begin_layout Plain Layout
@@ -5131,7 +6337,12 @@ TypeError: can only concatenate list (not "tuple") to list
 
 \begin_layout Plain Layout
 
-In [14]: len(l)                     # --> 4
+In [13]: 'a' in d                     # contains
+\end_layout
+
+\begin_layout Plain Layout
+
+Our[13]: True
 \end_layout
 
 \begin_layout Plain Layout
@@ -5140,26 +6351,12 @@ In [14]: len(l)                     # --> 4
 
 \begin_layout Plain Layout
 
-In []: 2 in l                       # contains
+In [14]: 'a' not in d                 # contains
 \end_layout
 
 \begin_layout Plain Layout
 
-Our[]: True
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-In [15]: l[1]                       # indexing
-\end_layout
-
-\begin_layout Plain Layout
-
-Out[15]: 2
+Our[14]: False
 \end_layout
 
 \begin_layout Plain Layout
@@ -5168,12 +6365,12 @@ Out[15]: 2
 
 \begin_layout Plain Layout
 
-In [16]: l[1:3]                     # slicing
+In [15]: bool(d)
 \end_layout
 
 \begin_layout Plain Layout
 
-Out[16]: (2, 'x')                   # output is a tuple
+Out[15]: True
 \end_layout
 
 \begin_layout Plain Layout
@@ -5182,12 +6379,202 @@ Out[16]: (2, 'x')                   # output is a tuple
 
 \begin_layout Plain Layout
 
-In [17]: a, b, c, d = l             # unpacking
+In [16]: bool({})
 \end_layout
 
 \begin_layout Plain Layout
 
-In [18]: bool(l), bool([])          # --> (True, False)
+Out[16]: False
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+set
+\family default
+\series default
+ (and 
+\family typewriter
+\series bold
+frozenset
+\family default
+\series default
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A 
+\family typewriter
+\series bold
+set
+\family default
+\series default
+ is an unordered collection with no duplicate elements
+\end_layout
+
+\begin_layout Itemize
+Sets are 
+\series bold
+heterogeneous
+\series default
+ containers (can store elements of different type)
+\end_layout
+
+\begin_layout Itemize
+Elements must be 
+\emph on
+hashable
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+immutable types are usually OK (numbers, strings, etc.)
+\end_layout
+
+\begin_layout Itemize
+tuples or frozensets must only contain immutable object
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A 
+\family typewriter
+\series bold
+frozenset
+\family default
+\series default
+ is the immutable version of a 
+\family typewriter
+\series bold
+set
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+set
+\family default
+ 
+\series default
+constructors and literals
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [1]: s = {'a', 'b', 2, 3}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [2]: type({})                   # WARNING: empty dict
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[2]: dict
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [3]: s = set()                  # empty set
+\end_layout
+
+\begin_layout Plain Layout
+
+In [4]: s = set(['a', 'b', 2, 3])  # set(sequence)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [5]: set(['a', 'b', (2, 3)])    # tuple element
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[5]: {'b', 'a', (2, 3)}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [6]: set('ciao')                # set(sequence)
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[6]: {'a', 'c', 'i', 'o'}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [6]: set(['ciao'])              # one str element
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[6]: {'ciao'}
 \end_layout
 
 \end_inset
@@ -5205,13 +6592,13 @@ In [18]: bool(l), bool([])          # --> (True, False)
 status open
 
 \begin_layout Plain Layout
-Other 
+
 \family typewriter
 \series bold
-list
+set
 \family default
 \series default
- tools (2/2)
+ tools
 \end_layout
 
 \end_inset
@@ -5228,22 +6615,7 @@ status open
 
 \begin_layout Plain Layout
 
-In [17]: l = [1, 2, 'x', 'y']
-\end_layout
-
-\begin_layout Plain Layout
-
-In [18]: del l[1]
-\end_layout
-
-\begin_layout Plain Layout
-
-In [19]: l
-\end_layout
-
-\begin_layout Plain Layout
-
-Out[19]: [1, 'x', 'y']
+In [1]: vowels = set('aeiou')
 \end_layout
 
 \begin_layout Plain Layout
@@ -5252,22 +6624,12 @@ Out[19]: [1, 'x', 'y']
 
 \begin_layout Plain Layout
 
-In [17]: l = [1, 2, 'x', 'y']
+In [2]: len(vowels)
 \end_layout
 
 \begin_layout Plain Layout
 
-In [18]: del l[1:3]
-\end_layout
-
-\begin_layout Plain Layout
-
-In [19]: l
-\end_layout
-
-\begin_layout Plain Layout
-
-Out[19]: [1, 'y']
+Out[2]: 5
 \end_layout
 
 \begin_layout Plain Layout
@@ -5276,22 +6638,54 @@ Out[19]: [1, 'y']
 
 \begin_layout Plain Layout
 
-In [17]: l = [1, 2, 'x', 'y']
+In [3]: 'b' in vowels      # contains
 \end_layout
 
 \begin_layout Plain Layout
 
-In [18]: del l[:]               # equivalent to l.clear()
+Out[3]: False
 \end_layout
 
 \begin_layout Plain Layout
 
-In [19]: l
 \end_layout
 
 \begin_layout Plain Layout
 
-Out[19]: []
+In [4]: 'b' not in vowels  # not contains
+\end_layout
+
+\begin_layout Plain Layout
+
+Our[4]: True
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [5]: bool(d), bool({})
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[5]: (True, False)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [6]: for item in set(['item1', 'item2']):
+\end_layout
+
+\begin_layout Plain Layout
+
+   ...:     do_something(item)
 \end_layout
 
 \end_inset
@@ -5304,35 +6698,18 @@ Out[19]: []
 
 \end_layout
 
-\begin_layout Frame
+\begin_layout FragileFrame
 \begin_inset Argument 4
 status open
 
 \begin_layout Plain Layout
-dict
-\end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-TBW
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
+\family typewriter
+\series bold
 set
+\family default
+\series default
+ comparison (1/2)
 \end_layout
 
 \end_inset
@@ -5342,7 +6719,678 @@ set
 
 \begin_deeper
 \begin_layout Standard
-TBW
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [7]: vowels == {'a', 'e', 'i', 'o', 'u'}
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[7]: True
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [8]: vowels != {'a', 'e', 'i', 'o', 'u'}
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[8]: False
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [9]: vowels <= ascii_lowercase     # set.issubset
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[9]: True
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [10]: vowels < {'a', 'e', 'i', 'o', 'u'}
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[10]: False
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [11]: vowels >= set(['a', 'e'])    # set.issuperset
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[11]: True
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [12]: {'a', 'e', 'i', 'o', 'u', 'x'} > vowels
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[12]: True
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+set
+\family default
+\series default
+ comparison (2/2)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [13]: vowels | set([1, 2])   # set.union
+\end_layout
+
+\begin_layout Plain Layout
+
+Our[13]: {'o', 'a', 1, 2, 'e', 'u', 'i'}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [14]: vowels & set('abc')    # set.intersection
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[14]: {'a'}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [15]: vowels - set('abc')    # set.difference
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[15]: {'e', 'i', 'o', 'u'} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [16]: vowels ^ set('abc')    # set.symmetric_difference
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[16]: {'b', 'c', 'e', 'i', 'o', 'u'}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+set
+\family default
+\series default
+ methods
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+0.45
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Both 
+\family typewriter
+\series bold
+set
+\family default
+\series default
+ and 
+\family typewriter
+\series bold
+frozenset
+\end_layout
+
+\begin_layout Itemize
+copy
+\end_layout
+
+\begin_layout Itemize
+difference
+\end_layout
+
+\begin_layout Itemize
+intersection
+\end_layout
+
+\begin_layout Itemize
+symmetric_difference
+\end_layout
+
+\begin_layout Itemize
+union
+\end_layout
+
+\begin_layout Itemize
+isdisjoint
+\end_layout
+
+\begin_layout Itemize
+issubset
+\end_layout
+
+\begin_layout Itemize
+issuperset
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+0.65
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Modifier methods (
+\family typewriter
+\series bold
+set
+\family default
+\series default
+ only)
+\end_layout
+
+\begin_layout Itemize
+add
+\end_layout
+
+\begin_layout Itemize
+update (like 
+\family typewriter
+\series bold
+dict
+\family default
+\series default
+)
+\end_layout
+
+\begin_layout Itemize
+clear
+\end_layout
+
+\begin_layout Itemize
+discard
+\end_layout
+
+\begin_layout Itemize
+pop
+\end_layout
+
+\begin_layout Itemize
+remove
+\end_layout
+
+\begin_layout Itemize
+intersection_update
+\end_layout
+
+\begin_layout Itemize
+difference_update
+\end_layout
+
+\begin_layout Itemize
+symmetric_difference_update
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+set
+\family default
+\series default
+ method examples (1/2)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [1]: vowels.issubset(ascii_lowercase)         # <=
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[1]: True
+\end_layout
+
+\begin_layout Plain Layout
+
+In [2]: vowels.issuperset(['a', 'u'])            # >=
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[2]: True
+\end_layout
+
+\begin_layout Plain Layout
+
+In [3]: vowels.isdisjoint('cd')
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[3]: True
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [4]: vowels.union([1, 2])                     # |
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[4]: {'o', 'a', 1, 2, 'u', 'e', 'i'}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [5]: vowels.difference(['a', 'u'])            # -
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[5]: {'e', 'i', 'o'}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [6]: vowels.symmetric_difference(['a', 'b'])  # ^
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[6]: {'b', 'e', 'i', 'o', 'u'}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [7]: vowels.intersection('abcde')             # &
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[7]: {'a', 'e'}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+set
+\family default
+\series default
+ method examples (2/2)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [8]: s = {}
+\end_layout
+
+\begin_layout Plain Layout
+
+In [9]: s.update(vowels)       # add multiple elements
+\end_layout
+
+\begin_layout Plain Layout
+
+In [10]: s
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[10]: {'a', 'e', 'i', 'o', 'u'}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [11]: s.add('ciao')         # add one elements
+\end_layout
+
+\begin_layout Plain Layout
+
+In [12]: s
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[12]: {'a', 'ciao', 'e', 'i', 'o', 'u'} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [13]: s.remove('invalid')   # one element
+\end_layout
+
+\begin_layout Plain Layout
+
+KeyError: 'invalid'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [14]: s.discard('invalid')  # no error
+\end_layout
+
+\begin_layout Plain Layout
+
+In [15]: s
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[15]: {'a', 'ciao', 'e', 'i', 'o', 'u'} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [16]: s.pop() # remove and return an arbitrary element
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[16]: 'o'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Other useful containers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The 
+\family typewriter
+\series bold
+collections
+\family default
+\series default
+ module provides a useful set of containers, e.g.:
+\end_layout
+
+\end_deeper
+\begin_layout FragileFrame
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+namedtuple() factory function for creating tuple subclasses with named fields
+\end_layout
+
+\begin_layout Description
+deque list-like container with fast appends and pops on either end
+\end_layout
+
+\begin_layout Description
+OrderedDict dict subclass that remembers the order entries were added
+\end_layout
+
+\begin_layout Description
+defaultdict dict subclass that calls a factory function to supply missing
+ values
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+How to get 
+\family typewriter
+\series bold
+collections
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [1]: import collections    # or e.g.
+\end_layout
+
+\begin_layout Plain Layout
+
+In [2]: from collections import namedtuple
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
