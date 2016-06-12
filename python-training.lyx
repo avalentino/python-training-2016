@@ -762,6 +762,115 @@ support for Python 2.7
 
 \end_deeper
 \end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Distributions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.python.org
+\end_layout
+
+\end_inset
+
+: Official CPython distribution (for Python 2 and 3), interpreter and standard
+ library (about 180 modules/packages)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.continuum.io/why-anaconda
+\end_layout
+
+\end_inset
+
+: Anaconda (Python 2 and 3 on Linux/Windows/Mac):
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+includes a package manager and a huge collection of packages
+\end_layout
+
+\begin_layout Itemize
+allows to manage different environments simultaneously
+\end_layout
+
+\begin_layout Itemize
+plays well with binary extensions
+\end_layout
+
+\begin_layout Itemize
+particularly suited for scientific users
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.enthought.com/products/canopy
+\end_layout
+
+\end_inset
+
+: Enthought Canopy (Python 2 only)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://python-xy.github.io
+\end_layout
+
+\end_inset
+
+: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$Pyhton(x,y)$
+\end_layout
+
+\end_inset
+
+ (Python 2 and windows only)
+\end_layout
+
+\begin_layout Itemize
+Any GNU/Linux distribution
+\end_layout
+
+\end_deeper
 \begin_layout Subsection
 Dive in
 \end_layout
@@ -936,7 +1045,7 @@ Interactive mode
 
 \begin_layout ExampleBlock
 \begin_inset listings
-lstparams "language=bash"
+lstparams "language=Python"
 inline false
 status open
 
@@ -962,12 +1071,16 @@ more information.
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
 >>> import os
 \end_layout
 
 \begin_layout Plain Layout
 
->>> os.path.getsize('python-training.lyx')
+>>> os.path.getsize('somefile.txt')
 \end_layout
 
 \begin_layout Plain Layout
@@ -1004,22 +1117,8 @@ Improved interactive shell: IPython
 \end_layout
 
 \begin_deeper
-\begin_layout Block
-\begin_inset Argument 2
-status open
-
-\begin_layout Plain Layout
-Hint
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-Use 
+\begin_layout Description
+Hint: use the 
 \emph on
 Jupyter Console
 \emph default
@@ -1036,6 +1135,7 @@ Jupyter QtConsole
  It provides:
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
 better auto-completion
 \end_layout
@@ -1060,10 +1160,12 @@ easy integration with GUI environment
 easy integration with the scientific tool-chain
 \end_layout
 
-\begin_layout Standard
+\end_deeper
+\begin_layout Description
 Links:
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
 Jupyter Project: 
 \begin_inset Flex URL
@@ -1358,13 +1460,7 @@ Otherwise, returns the result of object.__str__()
 
 \begin_layout Plain Layout
 
-encoding defaults to sys.getdefaultencoding().
-\end_layout
-
-\begin_layout Plain Layout
-
-errors defaults to 'strict'.
- 
+...
 \end_layout
 
 \end_inset
@@ -1405,7 +1501,7 @@ status open
 
 \begin_layout Plain Layout
 
-0.36
+0.4
 \backslash
 textwidth
 \end_layout
@@ -1479,7 +1575,7 @@ status open
 
 \begin_layout Plain Layout
 
-0.58
+0.6
 \backslash
 textwidth
 \end_layout
@@ -1567,15 +1663,16 @@ s (
 \family typewriter
 \series bold
 
-\begin_inset Quotes eld
-\end_inset
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline true
+status open
 
+\begin_layout Plain Layout
 
-\begin_inset Quotes erd
-\end_inset
+"""
+\end_layout
 
-
-\begin_inset Quotes erd
 \end_inset
 
 
@@ -1584,7 +1681,20 @@ s (
  or 
 \family typewriter
 \series bold
+
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+
 '''
+\end_layout
+
+\end_inset
+
+
 \family default
 \series default
 \emph on
@@ -1613,6 +1723,27 @@ Introspection
 \end_layout
 
 \begin_deeper
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+0.5
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset listings
 lstparams "language=Python"
@@ -1658,12 +1789,109 @@ Out[3]: str
 
 \begin_layout Plain Layout
 
-In [4]: dir(s)
+In [4]: type(2)
 \end_layout
 
 \begin_layout Plain Layout
 
-Out[4]: ['__add__',
+Out[4]: int
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [5]: isinstance(s, str)
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[5]: True
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [6]: type(s)
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[6]: str
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+0.5
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [6]: T = type(s)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [7]: two = T(2)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [8]: two
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[8]: '2'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [9]: dir(s)
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[9]: ['__add__',
 \end_layout
 
 \begin_layout Plain Layout
@@ -1678,11 +1906,6 @@ Out[4]: ['__add__',
 
 \begin_layout Plain Layout
 
-'translate',
-\end_layout
-
-\begin_layout Plain Layout
-
 'upper',
 \end_layout
 
@@ -1691,11 +1914,26 @@ Out[4]: ['__add__',
 'zfill']
 \end_layout
 
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [10]: hasattr(s, 'upper')
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[10]: True
+\end_layout
+
 \end_inset
 
 
 \end_layout
 
+\end_deeper
 \end_deeper
 \begin_layout Separator
 
@@ -1715,54 +1953,198 @@ All is an object
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
-TBW
-\end_layout
-
-\begin_layout Standard
+\begin_layout Itemize
 In Python all is an 
 \series bold
 object
-\series default
-.
- There are no 
+\end_layout
+
+\begin_layout Itemize
+No 
 \emph on
 primitive
 \emph default
- types.
- Numbers, strings, containers are all 
+ type: numbers, strings, containers are all 
 \series bold
 object
 \series default
-s.
- Also functions types and modules are 
+s
+\end_layout
+
+\begin_layout Itemize
+Also functions, types and modules are 
 \series bold
 object
 \series default
-s.
- We will elaborate more on this later.
+s
+\end_layout
+
+\begin_deeper
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+0.5
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-In any case, since all is an 
-\series bold
-object
-\series default
-, inheriting form the 
-\series bold
-Python object
-\series default
- base type, then tuples are technically 
-\bar under
-homogeneous
-\bar default
- containers of 
-\series bold
-Python object
-\series default
-s.
+\begin_inset listings
+lstparams "language=Python"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>>> def func(): pass
 \end_layout
 
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> type(func)
+\end_layout
+
+\begin_layout Plain Layout
+
+function
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> isinstance(func, object)
+\end_layout
+
+\begin_layout Plain Layout
+
+True 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> dir(func)
+\end_layout
+
+\begin_layout Plain Layout
+
+['__annotations__',
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+0.5
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>>> type('ciao')
+\end_layout
+
+\begin_layout Plain Layout
+
+str
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> type(str)
+\end_layout
+
+\begin_layout Plain Layout
+
+type
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> isinstance(str, object)
+\end_layout
+
+\begin_layout Plain Layout
+
+True
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> dir(s)
+\end_layout
+
+\begin_layout Plain Layout
+
+['__add__', ...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
 \end_deeper
 \begin_layout Separator
 
@@ -1787,7 +2169,7 @@ Indentation
 status open
 
 \begin_layout Plain Layout
-Important: white spaces are syntactically significant
+Important
 \end_layout
 
 \end_inset
@@ -1796,55 +2178,17 @@ Important: white spaces are syntactically significant
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
-Indentation is used to determine the grouping of statements.
+\begin_layout Itemize
+white spaces are 
+\series bold
+syntactically significant
+\end_layout
+
+\begin_layout Itemize
+indentation is used to determine the grouping of statements
 \end_layout
 
 \end_deeper
-\begin_layout ExampleBlock
-\begin_inset Argument 2
-status open
-
-\begin_layout Plain Layout
-Example
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout ExampleBlock
-\begin_inset listings
-lstparams "language=Python,showstringspaces=false,tabsize=4"
-inline false
-status open
-
-\begin_layout Plain Layout
-
-if filename.endswith('.txt'):
-\end_layout
-
-\begin_layout Plain Layout
-
-    print('text file:', filename)  # only executed for
-\end_layout
-
-\begin_layout Plain Layout
-
-    print('bla bla bla')           # '*.txt' files
-\end_layout
-
-\begin_layout Plain Layout
-
-print('Opening:', filename)  # <-- always executed 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Block
 \begin_inset Argument 2
 status open
@@ -1860,11 +2204,11 @@ Hint
 
 \begin_deeper
 \begin_layout Itemize
-Never mix tabs and spaces for indentation (--> syntax error)
+never mix tabs and spaces for indentation
 \end_layout
 
 \begin_layout Itemize
-Always use 4 (four) spaces to indent your code (it is the most widely adopted
+always use 4 (four) spaces to indent your code (it is the most widely adopted
  coding convention in the Python ecosystem)
 \end_layout
 
@@ -1883,7 +2227,7 @@ Always use 4 (four) spaces to indent your code (it is the most widely adopted
 status open
 
 \begin_layout Plain Layout
-Pretty file size example (TODO: (re)move this)
+Pretty file size
 \end_layout
 
 \end_inset
@@ -1990,6 +2334,370 @@ def pretty_file_size_str(size):
 
 \end_layout
 
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Let's use our function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [1]: import os
+\end_layout
+
+\begin_layout Plain Layout
+
+In [2]: import prettysize import pretty_file_size_str
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [3]: size = os.path.getsize('somefile.txt')
+\end_layout
+
+\begin_layout Plain Layout
+
+In [4]: size
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[4]: 20366
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [5]: pretty_file_size_str(size)
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[5]: 19.889 KB
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+C++ variables are 
+\emph on
+Boxes
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+0.3
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language={C++},basicstyle={\Large},showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int a = 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+a = 2;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int b = a;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+0.7
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/a1box.png
+	height 25theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 30col%
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/a2box.png
+	height 25theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/b2box.png
+	height 25theight%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/a2box.png
+	height 25theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Python variables are 
+\emph on
+Labels
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+0.35
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,basicstyle={\Large},showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [1]: a = 1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [2]: a = 2
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [3]: b = a
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+0.65
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/a1tag.png
+	height 25theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 25col%
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/a2tag.png
+	height 25theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/ab2tag.png
+	height 25theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -2011,7 +2719,7 @@ Summary
 \begin_deeper
 \begin_layout Column
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -2026,50 +2734,23 @@ textwidth
 \end_layout
 
 \begin_layout Itemize
-how to run a script
+indentation
 \end_layout
 
 \begin_layout Itemize
-interactive sessions
+introspection
+\end_layout
+
+\begin_layout Itemize
+all is an object
+\end_layout
+
+\begin_layout Itemize
+variables
 \end_layout
 
 \begin_layout Itemize
 how to import a module
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-
-\series bold
-os
-\series default
- module and 
-\end_layout
-
-\begin_layout Itemize
-the 
-\emph on
-
-\begin_inset listings
-lstparams "language=Python,showstringspaces=false"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-os.path.getsize
-\end_layout
-
-\end_inset
-
-
-\emph default
- function
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-introspection
 \end_layout
 
 \begin_layout Itemize
@@ -2084,13 +2765,9 @@ string formatting
 docstrings
 \end_layout
 
-\begin_layout Itemize
-indentation
-\end_layout
-
 \begin_layout Column
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -2127,6 +2804,13 @@ dir
 
 \family typewriter
 \series bold
+hasattr
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\series bold
 help
 \end_layout
 
@@ -2142,26 +2826,6 @@ len
 \family typewriter
 \series bold
 str
-\family default
-\series default
- and the 
-\emph on
-
-\begin_inset listings
-lstparams "language=Python,showstringspaces=false"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-str.endswidth
-\end_layout
-
-\end_inset
-
-
-\emph default
- method
 \end_layout
 
 \end_deeper
@@ -2189,6 +2853,13 @@ def
 \family typewriter
 \series bold
 return
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\series bold
+import
 \end_layout
 
 \end_deeper
@@ -2234,6 +2905,10 @@ tuples (heterogeneous sequences)
 \end_layout
 
 \begin_layout Itemize
+frozensets (immutable version of set)
+\end_layout
+
+\begin_layout Itemize
 
 \family typewriter
 \series bold
@@ -2267,7 +2942,7 @@ False
 
 \end_deeper
 \begin_layout Itemize
-Mutable
+Mutable types
 \end_layout
 
 \begin_deeper
@@ -2294,8 +2969,7 @@ mathcal{O}(1)$
 \end_layout
 
 \begin_layout Itemize
-sets and frozensets (unordered collection of heterogeneous object with no
- duplication)
+sets (unordered collection of heterogeneous object with no duplication)
 \end_layout
 
 \begin_layout Itemize
@@ -2913,7 +3587,7 @@ In [27]: 1j > 2.
 
 \begin_layout Plain Layout
 
-TypeError                 Traceback (most recent call last)
+TypeError       Traceback (most recent call last)
 \end_layout
 
 \begin_layout Plain Layout
@@ -2998,7 +3672,13 @@ the
 str
 \family default
 \series default
- type: are strings of unicode characters
+ type: are strings of 
+\family typewriter
+\series bold
+unicode
+\family default
+\series default
+ characters
 \end_layout
 
 \begin_layout Itemize
@@ -3659,7 +4339,7 @@ In [7]: s = 'abcdefghijklmnopqrstuvwxyz'
 
 \begin_layout Plain Layout
 
-In [8]: s[2]           # zero based indexing
+In [8]: s[2]             # zero based indexing
 \end_layout
 
 \begin_layout Plain Layout
@@ -3673,7 +4353,7 @@ Out[8]: 'c'
 
 \begin_layout Plain Layout
 
-In [9]: s[0:2]         # start included, stop excluded
+In [9]: s[0:2]           # start included, stop excluded
 \end_layout
 
 \begin_layout Plain Layout
@@ -3701,7 +4381,7 @@ Out[10]: ('abcdefghijklm', 'nopqrstuvwxyz')
 
 \begin_layout Plain Layout
 
-In [11]: s[-1]        # negative indices are OK
+In [11]: s[-1]           # negative indices are OK
 \end_layout
 
 \begin_layout Plain Layout
@@ -3715,7 +4395,7 @@ Out[11]: 'z'
 
 \begin_layout Plain Layout
 
-In [12]: s[1:20:3]    # start:stop:step
+In [12]: s[1:20:3]       # start:stop:step
 \end_layout
 
 \begin_layout Plain Layout
@@ -3729,7 +4409,7 @@ Out[12]: 'behknqt'
 
 \begin_layout Plain Layout
 
-In [12]: s[::-1]      # negative step is OK --> revese seq.
+In [12]: s[::-1]         # negative step is OK --> revese seq.
 \end_layout
 
 \begin_layout Plain Layout
@@ -3743,7 +4423,7 @@ Out[12]: 'zyxwvutsrqponmlkjihgfedcba'
 
 \begin_layout Plain Layout
 
-In [13]: s[:]         # all elements
+In [13]: s[:]            # all elements
 \end_layout
 
 \end_inset
@@ -7394,6 +8074,372 @@ In [2]: from collections import namedtuple
 \end_layout
 
 \end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Mutable vs immutable object
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [1]: s1 = 'Hello, World'
+\end_layout
+
+\begin_layout Plain Layout
+
+In [2]: s2 = s1   # assignment: bind a name to an object
+\end_layout
+
+\begin_layout Plain Layout
+
+In [3]: s1 is s2  # identity
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[3]: True      # s1 and s2 are labels for the same obj
+\end_layout
+
+\begin_layout Plain Layout
+
+In [4]: s1 += '!' # the obj bound to s1 can't be modified
+\end_layout
+
+\begin_layout Plain Layout
+
+                  # --> rebinding: s1 = str(s1 + '!')
+\end_layout
+
+\begin_layout Plain Layout
+
+In [5]: s1 is s2
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[5]: False
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [4]: d1 = {}   # mutable
+\end_layout
+
+\begin_layout Plain Layout
+
+In [5]: d2 = d1
+\end_layout
+
+\begin_layout Plain Layout
+
+In [6]: d2['key'] = 'value'
+\end_layout
+
+\begin_layout Plain Layout
+
+In [7]: d1
+\end_layout
+
+\begin_layout Plain Layout
+
+{'key': 'value'}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [7]: d1 is d2  # d1 and d2 are still bound
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[4]: True      # the same object
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+x Comprehensions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\[
+I=\left\{ f\left(x\right),x\in A\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [1]: A = set([1, 2, 3, 4, 5])
+\end_layout
+
+\begin_layout Plain Layout
+
+In [2]: I = {x**2 for x in A}    # set comprehension
+\end_layout
+
+\begin_layout Plain Layout
+
+In [3]: I
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[3]: {1, 4, 9, 16, 25}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [4]: I_odd = {x**2 for x in A if x % 2 != 0}
+\end_layout
+
+\begin_layout Plain Layout
+
+In [5]: I_odd
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[5]: {1, 9, 25}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [6]: L = [x**2 for x in A]    # list comprehension
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [7]: D = {x: x**2 for x in A} # dict comprehension
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[7]: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Generator expressions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [8]: G = (x**2 for x in A)    # it is not a tuple!
+\end_layout
+
+\begin_layout Plain Layout
+
+In [9]: type(G)                  # a tuple is defined 
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[9]: generator                # by commas
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [10]: hasattr(G, '__next__')
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[10]: True
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [11]: for item in G:
+\end_layout
+
+\begin_layout Plain Layout
+
+    ...:     do_something(item)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [12]: T = tuple(x**2 for x in A)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+What is a generator?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+A generator (iterator) is a iterable object that generates values dynamically
+ when the 
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+next(G)
+\end_layout
+
+\end_inset
+
+ function is called on it
+\end_layout
+
+\end_deeper
 \begin_layout Subsection
 Flow control and exception handling
 \end_layout
@@ -8395,7 +9441,7 @@ for
 status open
 
 \begin_layout Plain Layout
-Bad
+Bad: indexing
 \end_layout
 
 \end_inset
@@ -8412,17 +9458,17 @@ status open
 
 \begin_layout Plain Layout
 
-seq = ['a', 'b']
+In [1]: seq = ['a', 'b']
 \end_layout
 
 \begin_layout Plain Layout
 
-for index in range(2):
+In [2]: for i in range(2):
 \end_layout
 
 \begin_layout Plain Layout
 
-    print('Item {}: {}'.format(index, seq[index]))
+   ...:     print('Item {}: {}'.format(i, seq[i]))
 \end_layout
 
 \end_inset
@@ -8457,7 +9503,13 @@ only works on objects that can be indexed (
 status open
 
 \begin_layout Plain Layout
-Good
+Good: use 
+\family typewriter
+\series bold
+enumerate
+\family default
+\series default
+ instead
 \end_layout
 
 \end_inset
@@ -8474,12 +9526,12 @@ status open
 
 \begin_layout Plain Layout
 
-for index, item in enumerate(['a', 'b']):
+In [1]: for index, item in enumerate(['a', 'b']):
 \end_layout
 
 \begin_layout Plain Layout
 
-    print('Item {}: {}'.format(index, item))
+   ...:     print('Item {}: {}'.format(index, item))
 \end_layout
 
 \end_inset
@@ -8514,7 +9566,7 @@ Exception handling
 \begin_deeper
 \begin_layout Column
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -8528,17 +9580,7 @@ textwidth
 
 \end_layout
 
-\begin_layout ExampleBlock
-\begin_inset Argument 2
-status open
-
-\begin_layout Plain Layout
-Example
-\end_layout
-
-\end_inset
-
-
+\begin_layout Standard
 \begin_inset listings
 lstparams "language=Python,showstringspaces=false,tabsize=4"
 inline false
@@ -8562,6 +9604,16 @@ except ExceptionType:
 \begin_layout Plain Layout
 
     handle_this_exception_type()
+\end_layout
+
+\begin_layout Plain Layout
+
+except (ExcType1, ExcType2):
+\end_layout
+
+\begin_layout Plain Layout
+
+    pass
 \end_layout
 
 \begin_layout Plain Layout
@@ -8616,7 +9668,7 @@ finally:
 
 \begin_layout Column
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
