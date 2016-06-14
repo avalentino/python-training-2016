@@ -1147,7 +1147,14 @@ more information.
 status open
 
 \begin_layout Plain Layout
-Improved interactive shell: IPython
+Improved interactive shell: 
+\emph on
+Jupyter 
+\emph default
+(a.k.a.
+ 
+\emph on
+IPython)
 \end_layout
 
 \end_inset
@@ -1156,25 +1163,18 @@ Improved interactive shell: IPython
 \end_layout
 
 \begin_deeper
-\begin_layout Description
-Hint: use the 
+\begin_layout Standard
+The 
 \emph on
-Jupyter Console
+Jupyter
 \emph default
- (a.k.a.
- 
+ (Qt)Console and the (web based)
 \emph on
-IPython)
+ notebook
 \emph default
- or 
-\emph on
-Jupyter QtConsole
-\emph default
- for your interactive shell sessions.
- It provides:
+ provide:
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 better auto-completion
 \end_layout
@@ -1188,20 +1188,24 @@ session profiles
 \end_layout
 
 \begin_layout Itemize
-easy integration with the system shell
+integration with the system shell
 \end_layout
 
 \begin_layout Itemize
-easy integration with GUI environment
+integration with GUI envs and scientific tool-chains
 \end_layout
 
-\begin_layout Itemize
-easy integration with the scientific tool-chain
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Links
 \end_layout
 
-\end_deeper
-\begin_layout Description
-Links:
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1228,6 +1232,40 @@ status open
 \begin_layout Plain Layout
 
 http://ipython.org
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+On-line 
+\emph on
+Jupyter
+\emph default
+ notebook: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://try.jupyter.org
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+On-line interactive shell: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.python.org/shell
 \end_layout
 
 \end_inset
