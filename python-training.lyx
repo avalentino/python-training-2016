@@ -1856,12 +1856,12 @@ Out[5]: True
 
 \begin_layout Plain Layout
 
-In [6]: type(s)
+In [6]: hasattr(s, 'upper')
 \end_layout
 
 \begin_layout Plain Layout
 
-Out[6]: str
+Out[6]: True
 \end_layout
 
 \end_inset
@@ -1945,26 +1945,27 @@ Out[9]: ['__add__',
 
 \begin_layout Plain Layout
 
+'swapcase',
+\end_layout
+
+\begin_layout Plain Layout
+
+'title',
+\end_layout
+
+\begin_layout Plain Layout
+
+'translate', 
+\end_layout
+
+\begin_layout Plain Layout
+
 'upper',
 \end_layout
 
 \begin_layout Plain Layout
 
 'zfill']
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-In [10]: hasattr(s, 'upper')
-\end_layout
-
-\begin_layout Plain Layout
-
-Out[10]: True
 \end_layout
 
 \end_inset
@@ -2400,7 +2401,7 @@ In [1]: import os
 
 \begin_layout Plain Layout
 
-In [2]: import prettysize import pretty_file_size_str
+In [2]: from prettysize import pretty_file_size_str
 \end_layout
 
 \begin_layout Plain Layout
@@ -7385,7 +7386,7 @@ Our[4]: True
 
 \begin_layout Plain Layout
 
-In [5]: bool(d), bool({})
+In [5]: bool(d), bool(set())
 \end_layout
 
 \begin_layout Plain Layout
@@ -8059,7 +8060,11 @@ collections
 
 \begin_deeper
 \begin_layout Description
-namedtuple() factory function for creating tuple subclasses with named fields
+namedtuple 
+\emph on
+factory function
+\emph default
+ for creating tuple subclasses with named fields
 \end_layout
 
 \begin_layout Description
