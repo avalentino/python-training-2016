@@ -7970,7 +7970,7 @@ status open
 
 \begin_layout Plain Layout
 
-In [8]: s = {}
+In [8]: s = set()
 \end_layout
 
 \begin_layout Plain Layout
@@ -8888,17 +8888,17 @@ mapping = {
 
 \begin_layout Plain Layout
 
-    'a': do_styff_for_a,
+    'a': do_stuff_for_a,
 \end_layout
 
 \begin_layout Plain Layout
 
-	'b': do_styff_for_b,
+	'b': do_stuff_for_b,
 \end_layout
 
 \begin_layout Plain Layout
 
-	'c': do_styff_for_c,
+	'c': do_stuff_for_c,
 \end_layout
 
 \begin_layout Plain Layout
@@ -11849,7 +11849,7 @@ Modules
 
 \begin_deeper
 \begin_layout Itemize
-a module is a file containing Python definitions and statements (finctions,
+a module is a file containing Python definitions and statements (functions,
  classes, variables, etc.)
 \end_layout
 
@@ -11876,8 +11876,10 @@ object
 \series default
 s, 
 \family typewriter
+\series bold
 __name__
 \family default
+\series default
  and 
 \family typewriter
 \series bold
@@ -11966,7 +11968,7 @@ status open
 
 \begin_layout Plain Layout
 
-package
+pkg
 \end_layout
 
 \begin_layout Plain Layout
@@ -11976,12 +11978,12 @@ package
 
 \begin_layout Plain Layout
 
-|-- module1.py
+|-- mod01.py
 \end_layout
 
 \begin_layout Plain Layout
 
-|-- module2.py
+|-- mod02.py
 \end_layout
 
 \begin_layout Plain Layout
@@ -11996,12 +11998,12 @@ package
 
 \begin_layout Plain Layout
 
-    +-- module1.cpython-35.pyc
+    +-- mod01.cpython-35.pyc
 \end_layout
 
 \begin_layout Plain Layout
 
-+-- subpackage
++-- subpkg
 \end_layout
 
 \begin_layout Plain Layout
@@ -12011,7 +12013,7 @@ package
 
 \begin_layout Plain Layout
 
-    +-- mod10.py
+    +-- mod11.py
 \end_layout
 
 \end_inset
@@ -12049,7 +12051,7 @@ status collapsed
 
 \begin_layout Plain Layout
 
-0.35
+0.45
 \backslash
 textwidth
 \end_layout
@@ -12070,15 +12072,20 @@ import
 \end_layout
 
 \begin_layout Itemize
-loads the module
+search the module file
 \end_layout
 
 \begin_layout Itemize
-creates a module object and 
+compile it to bytecode if necessary
 \end_layout
 
 \begin_layout Itemize
-binds the module to a local variable (label)
+executes the module (creates a module object, classes and functions in it),
+ and
+\end_layout
+
+\begin_layout Itemize
+binds the module to a local variable
 \end_layout
 
 \begin_layout Column
@@ -12087,7 +12094,7 @@ status collapsed
 
 \begin_layout Plain Layout
 
-0.7
+0.55
 \backslash
 textwidth
 \end_layout
@@ -12129,7 +12136,7 @@ import module as alias
 
 \begin_layout Plain Layout
 
-from module import function, class
+from module import something
 \end_layout
 
 \begin_layout Plain Layout
@@ -12138,17 +12145,17 @@ from module import function, class
 
 \begin_layout Plain Layout
 
-import package
+import pkg
 \end_layout
 
 \begin_layout Plain Layout
 
-import package.module1
+import pkg.mod01
 \end_layout
 
 \begin_layout Plain Layout
 
-from package.subpackage import mod10
+from pkg.subpkg import mod11
 \end_layout
 
 \begin_layout Plain Layout
@@ -12157,24 +12164,24 @@ from package.subpackage import mod10
 
 \begin_layout Plain Layout
 
-# In package.subpackage.__init__.py
+# In pkg.subpkg.__init__.py
 \end_layout
 
 \begin_layout Plain Layout
 
-from __future__ import absolute_import
+from pkg.subpkg import mod11
 \end_layout
 
 \begin_layout Plain Layout
 
 from .
- import module10
+ import mod11 # relative
 \end_layout
 
 \begin_layout Plain Layout
 
 from ..
- import module1
+ import mod01
 \end_layout
 
 \end_inset
@@ -12305,7 +12312,7 @@ Using modules as scripts
 \begin_deeper
 \begin_layout Column
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -12342,7 +12349,7 @@ function and classes are declared
 \end_layout
 
 \begin_layout Itemize
-if the file is imported as a module then the 
+if the file is imported as a module, then the 
 \family typewriter
 \series bold
 __name__
@@ -12365,7 +12372,7 @@ __name__
 
 \begin_layout Column
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -12402,10 +12409,6 @@ status open
 \begin_layout Plain Layout
 
 '''Module docstring'''
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -12995,24 +12998,6 @@ target "http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html"
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-key "DiveIntoPython3"
-
-\end_inset
-
-
-\begin_inset CommandInset href
-LatexCommand href
-name "Dive into Python 3"
-target "http://www.diveintopython3.net"
-
-\end_inset
-
-, by Mark Pilgrim
-\end_layout
-
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
 key "PythonIntro"
 
 \end_inset
@@ -13026,6 +13011,172 @@ target "http://www.slideshare.net/nowells/introduction-to-python-5182313"
 \end_inset
 
 , by Nowell Strite
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beamertemplatebookbibitems
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "DiveIntoPython3"
+
+\end_inset
+
+Mark Pilgrim
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newblock
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "Dive into Python 3"
+target "http://www.diveintopython3.net"
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newblock
+\end_layout
+
+\end_inset
+
+ Apress 2009
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "LeraningPython"
+
+\end_inset
+
+Mark Lutz
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newblock
+\end_layout
+
+\end_inset
+
+ Learning Python, 5th Edition - Powerful Object-Oriented Programming 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newblock
+\end_layout
+
+\end_inset
+
+ O'Reilly 2013
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "ProgremmingInPython3"
+
+\end_inset
+
+Mark Summerfield
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newblock
+\end_layout
+
+\end_inset
+
+ Programming in Python 3: A Complete Introduction to the Python Language
+ (Second Edition)
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newblock
+\end_layout
+
+\end_inset
+
+ Addison-Wesley, November 2009
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Berri"
+
+\end_inset
+
+Marco Beri
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newblock
+\end_layout
+
+\end_inset
+
+ Python
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newblock
+\end_layout
+
+\end_inset
+
+ Apogeo 2010
 \end_layout
 
 \end_deeper
