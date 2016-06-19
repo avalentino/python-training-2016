@@ -9695,7 +9695,7 @@ except (ExcType1, ExcType2):
 
 \begin_layout Plain Layout
 
-    pass
+    pass   # explicitly ignore
 \end_layout
 
 \begin_layout Plain Layout
@@ -9715,12 +9715,7 @@ except AnotherType as exc:
 
 \begin_layout Plain Layout
 
-except Exception:
-\end_layout
-
-\begin_layout Plain Layout
-
-    # base class for all errors
+except Exception: # error base class
 \end_layout
 
 \begin_layout Plain Layout
@@ -9740,7 +9735,17 @@ finally:
 
 \begin_layout Plain Layout
 
-    pass
+    pass # always executed
+\end_layout
+
+\begin_layout Plain Layout
+
+else:     
+\end_layout
+
+\begin_layout Plain Layout
+
+    pass # no exception occurred
 \end_layout
 
 \end_inset
@@ -9754,7 +9759,7 @@ status collapsed
 
 \begin_layout Plain Layout
 
-0.4
+0.45
 \backslash
 textwidth
 \end_layout
@@ -9789,8 +9794,7 @@ try
 \end_layout
 
 \begin_layout Itemize
-...
- followed by a 
+the 
 \emph on
 code block
 \end_layout
@@ -9812,7 +9816,17 @@ the (optional)
 finally
 \family default
 \series default
- clause is always executes
+ clause is always executed
+\end_layout
+
+\begin_layout Itemize
+the (optional) 
+\family typewriter
+\series bold
+else
+\family default
+\series default
+ clause is executed only id no exception occurred
 \end_layout
 
 \end_deeper
@@ -12472,12 +12486,15 @@ Object Oriented Programming
 User defined types
 \end_layout
 
-\begin_layout Frame
+\begin_layout FragileFrame
 \begin_inset Argument 4
 status open
 
 \begin_layout Plain Layout
-class 
+
+\family typewriter
+\series bold
+class
 \end_layout
 
 \end_inset
@@ -12486,11 +12503,166 @@ class
 \end_layout
 
 \begin_deeper
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+0.63
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-TBW
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class UserTypeName(object):
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''Class docstring'''
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    def  __init__(self, arg1, ...):
+\end_layout
+
+\begin_layout Plain Layout
+
+        '''Initializer docstring'''
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+         self.attr = arg1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    def method(self, arg1, ...):
+\end_layout
+
+\begin_layout Plain Layout
+
+        '''Method docstring'''
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        do_something()
+\end_layout
+
+\begin_layout Plain Layout
+
+        ...
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        return value
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+0.4
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\series bold
+class
+\family default
+\series default
+ keyword
+\end_layout
+
+\begin_layout Itemize
+base class(es), object is redundant in Python 3
+\end_layout
+
+\begin_layout Itemize
+class 
+\emph on
+docstring
+\end_layout
+
+\begin_layout Itemize
+initializer (special method)
+\end_layout
+
+\begin_layout Itemize
+methods like function
+\end_layout
+
+\begin_layout Itemize
+explicit 
+\series bold
+self
+\series default
+ parameter (instance) in method definition
 \end_layout
 
 \end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
 \begin_layout FragileFrame
 \begin_inset Argument 4
 status open
@@ -12505,6 +12677,27 @@ self
 \end_layout
 
 \begin_deeper
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+0.5
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset listings
 lstparams "language=Python,showstringspaces=false,tabsize=4"
@@ -12513,17 +12706,7 @@ status open
 
 \begin_layout Plain Layout
 
-In [1]: def func(itemlist=[]):
-\end_layout
-
-\begin_layout Plain Layout
-
-   ...:     itemlist.append(None)
-\end_layout
-
-\begin_layout Plain Layout
-
-   ...:     print(itemlist)
+from math import pi
 \end_layout
 
 \begin_layout Plain Layout
@@ -12532,10 +12715,64 @@ In [1]: def func(itemlist=[]):
 
 \begin_layout Plain Layout
 
+class Circle(object):
 \end_layout
 
 \begin_layout Plain Layout
 
+    def  __init__(self, r):
+\end_layout
+
+\begin_layout Plain Layout
+
+         self.r = r
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    def area(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+        # pi * r**2 --> error
+\end_layout
+
+\begin_layout Plain Layout
+
+        return pi * self.r**2
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+c = Circle(r=1)
+\end_layout
+
+\begin_layout Plain Layout
+
+area = c.area()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# also possible
+\end_layout
+
+\begin_layout Plain Layout
+
+area = Circle.area(c)
 \end_layout
 
 \end_inset
@@ -12543,6 +12780,67 @@ In [1]: def func(itemlist=[]):
 
 \end_layout
 
+\begin_layout Column
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+0.55
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+self
+\series default
+ is the instance on which the method acts
+\end_layout
+
+\begin_layout Itemize
+the 
+\series bold
+self
+\series default
+ argument must be explicitly listed in method definition
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+self
+\series default
+ is the only way to access instance attributes and methods
+\end_layout
+
+\begin_layout Itemize
+no need specify 
+\series bold
+self
+\series default
+ in (
+\emph on
+bound
+\emph default
+) method call
+\end_layout
+
+\begin_layout Itemize
+it is also possible to call 
+\emph on
+unbound methods
+\emph default
+ passing the instance explicitly
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Separator
 
@@ -12553,7 +12851,342 @@ In [1]: def func(itemlist=[]):
 status open
 
 \begin_layout Plain Layout
+
+\family typewriter
+\series bold
 __init__
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+__init__ is a 
+\series bold
+special method
+\end_layout
+
+\begin_layout Itemize
+it is automatically called when an object is created
+\end_layout
+
+\begin_layout Itemize
+__init__is used to initialize instance attributes (
+\emph on
+initializer
+\emph default
+ method)
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Readability counts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Although it is not mandatory it is strongly recommended to initialize 
+\series bold
+all
+\series default
+ attributes in the 
+\family typewriter
+\series bold
+__init__
+\family default
+\series default
+ method or 
+\family typewriter
+\series bold
+base.__init__
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Freedom and good judgment
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+0.5
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class UserType(object):
+\end_layout
+
+\begin_layout Plain Layout
+
+    def __init__(self, a):
+\end_layout
+
+\begin_layout Plain Layout
+
+        self.a = a
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    def method(self, b):
+\end_layout
+
+\begin_layout Plain Layout
+
+        self.b = b
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+obj = UserType('a')
+\end_layout
+
+\begin_layout Plain Layout
+
+hasattr(obj, 'a')  # True
+\end_layout
+
+\begin_layout Plain Layout
+
+hasattr(obj, 'b')  # False
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+obj.method('b')
+\end_layout
+
+\begin_layout Plain Layout
+
+hasattr(obj, 'b')  # True!
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+obj.c = 'c'  # also allowed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+0.5
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Python is very 
+\emph on
+flexibility
+\emph default
+ and gives the developer 
+\emph on
+freedom
+\emph default
+ to do almost anything
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+it is responsibility of the developer to mess around
+\end_layout
+
+\begin_layout Itemize
+the fact that it is possible to do something doesn't mean it is a good idea
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Visibility (public, private, ...)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In Python do not exist visibility access modifiers
+\end_layout
+
+\begin_layout Itemize
+Python does not enforces access restrictions at language level
+\end_layout
+
+\begin_layout Itemize
+an universally known naming convention is used instead
+\end_layout
+
+\begin_layout Itemize
+Protected/private attributes/methods start with a single underscore: 
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+self._protected_attribute
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Avoiding name clashes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Attributes starting with a double underscore (
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+__name
+\end_layout
+
+\end_inset
+
+) are not directly accessible fro outside the class definition code
+\end_layout
+
+\begin_layout Itemize
+If have to be intended as a mechanism to avoid name clashes with names defined
+ by sub-classes rather then a way to implement access restrictions
+\end_layout
+
+\begin_layout Itemize
+Those attributes are accessible by the client code simply using: 
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+obj._ClassName__name
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Visibility examples
 \end_layout
 
 \end_inset
@@ -12570,17 +13203,42 @@ status open
 
 \begin_layout Plain Layout
 
-In [1]: def func(itemlist=[]):
+In [1]: class UserType(object):
 \end_layout
 
 \begin_layout Plain Layout
 
-   ...:     itemlist.append(None)
+   ...:    def __init__(self):
 \end_layout
 
 \begin_layout Plain Layout
 
-   ...:     print(itemlist)
+   ...:        self._a = 'protected/private'
+\end_layout
+
+\begin_layout Plain Layout
+
+   ...:        self.__b = 'safe name' # protected/private
+\end_layout
+
+\begin_layout Plain Layout
+
+   ...:
+\end_layout
+
+\begin_layout Plain Layout
+
+   ...:    def method(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+   ...:        self._a = 'something'
+\end_layout
+
+\begin_layout Plain Layout
+
+   ...:        self.__b = ''          # simple access
 \end_layout
 
 \begin_layout Plain Layout
@@ -12589,10 +13247,45 @@ In [1]: def func(itemlist=[]):
 
 \begin_layout Plain Layout
 
+In [2]: obj = UserType()
 \end_layout
 
 \begin_layout Plain Layout
 
+In [3]: obj._a
+\end_layout
+
+\begin_layout Plain Layout
+
+Pur[3]: 'protected/private'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [4]: obj.__b
+\end_layout
+
+\begin_layout Plain Layout
+
+AttributeError: 'UserType' object has no attribute '__b'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [5]: obj._UserType__b
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[5]: 'safe name'
 \end_layout
 
 \end_inset
@@ -12619,6 +13312,18 @@ Inheritance
 \end_layout
 
 \begin_deeper
+\begin_layout Itemize
+Python supports both simple and multiple inheritance
+\end_layout
+
+\begin_layout Itemize
+Base classes are listed in parentheses after the (derived) class name
+\end_layout
+
+\begin_layout Itemize
+The base class constructor have to be called explicitly (if it is necessary)
+\end_layout
+
 \begin_layout Standard
 \begin_inset listings
 lstparams "language=Python,showstringspaces=false,tabsize=4"
@@ -12627,17 +13332,22 @@ status open
 
 \begin_layout Plain Layout
 
-In [1]: def func(itemlist=[]):
+class Derived(Base):
 \end_layout
 
 \begin_layout Plain Layout
 
-   ...:     itemlist.append(None)
+    def __init__(self, *args, **kwargs):
 \end_layout
 
 \begin_layout Plain Layout
 
-   ...:     print(itemlist)
+        # Base.__init__(self, *args, **kwargs) # or
+\end_layout
+
+\begin_layout Plain Layout
+
+        super().__init__(*args, **kwargs) # recommended
 \end_layout
 
 \begin_layout Plain Layout
@@ -12646,10 +13356,26 @@ In [1]: def func(itemlist=[]):
 
 \begin_layout Plain Layout
 
+        self.derived_attr = None   # derived class code
 \end_layout
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
+    def method(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+        do_other_stuff()           # derived class code
+\end_layout
+
+\begin_layout Plain Layout
+
+        return super().method(*args, **kwargs)
 \end_layout
 
 \end_inset
@@ -12667,6 +13393,9 @@ In [1]: def func(itemlist=[]):
 status open
 
 \begin_layout Plain Layout
+
+\family typewriter
+\series bold
 super
 \end_layout
 
@@ -12676,7 +13405,46 @@ super
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Itemize
+
+\family typewriter
+\series bold
+super
+\family default
+\series default
+ returns a proxy object that delegates method calls to a parent class
+\end_layout
+
+\begin_layout Itemize
+It is the key element to implement the so called 
+\series bold
+cooperative-inheritance
+\end_layout
+
+\begin_layout Itemize
+In Python 2 you have explicitly inherit form object to use 
+\family typewriter
+\series bold
+super
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+super
+\family default
+\series default
+ in Python 2 and Python 3
+\end_layout
+
+\end_inset
+
+
 \begin_inset listings
 lstparams "language=Python,showstringspaces=false,tabsize=4"
 inline false
@@ -12684,17 +13452,12 @@ status open
 
 \begin_layout Plain Layout
 
-In [1]: def func(itemlist=[]):
+# Pythpn 2 and Python 3
 \end_layout
 
 \begin_layout Plain Layout
 
-   ...:     itemlist.append(None)
-\end_layout
-
-\begin_layout Plain Layout
-
-   ...:     print(itemlist)
+super(Derived, self).__init__(*args, **kwargs)
 \end_layout
 
 \begin_layout Plain Layout
@@ -12703,10 +13466,12 @@ In [1]: def func(itemlist=[]):
 
 \begin_layout Plain Layout
 
+# Python 3 only
 \end_layout
 
 \begin_layout Plain Layout
 
+super().__init__(*args, **kwargs)
 \end_layout
 
 \end_inset
@@ -12724,7 +13489,162 @@ In [1]: def func(itemlist=[]):
 status open
 
 \begin_layout Plain Layout
-Visibility (public, private, ...)
+Multiple inheritance (1/2)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+0.6
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class Root(object):
+\end_layout
+
+\begin_layout Plain Layout
+
+    def __init__(self, arg):
+\end_layout
+
+\begin_layout Plain Layout
+
+        print('Root(%r)' % arg)
+\end_layout
+
+\begin_layout Plain Layout
+
+        # no args for object
+\end_layout
+
+\begin_layout Plain Layout
+
+        super().__init__()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class Base1(Root):
+\end_layout
+
+\begin_layout Plain Layout
+
+    def __init__(self, arg):
+\end_layout
+
+\begin_layout Plain Layout
+
+        print('Base1(%r)' % arg)
+\end_layout
+
+\begin_layout Plain Layout
+
+        super().__init__(arg)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class Base2(Root):
+\end_layout
+
+\begin_layout Plain Layout
+
+    def __init__(self, arg):
+\end_layout
+
+\begin_layout Plain Layout
+
+        print('Base2(%r)' % arg)
+\end_layout
+
+\begin_layout Plain Layout
+
+        super().__init__(arg)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+0.4
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Diamond inheritance
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/diamond-inheritance.svg
+	height 70theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Multiple inheritance (2/2)
 \end_layout
 
 \end_inset
@@ -12741,29 +13661,288 @@ status open
 
 \begin_layout Plain Layout
 
-In [1]: def func(itemlist=[]):
+class Derived(Base1, Base2):
 \end_layout
 
 \begin_layout Plain Layout
 
-   ...:     itemlist.append(None)
+    def __init__(self, arg):
 \end_layout
 
 \begin_layout Plain Layout
 
-   ...:     print(itemlist)
+        print('Derived(%r)' % arg)
 \end_layout
 
 \begin_layout Plain Layout
 
+        super().__init__(arg)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [1]: obj = Derived('arg')
 \end_layout
 
 \begin_layout Plain Layout
 
+Derived('arg')
 \end_layout
 
 \begin_layout Plain Layout
 
+Base1('arg')
+\end_layout
+
+\begin_layout Plain Layout
+
+Base2('arg')     # NOTE: Base2 before Root
+\end_layout
+
+\begin_layout Plain Layout
+
+Root('arg')      # NOTE: Root appears only once
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Method Resolution Order (MRO)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Methods are called according to the MRO
+\end_layout
+
+\begin_layout Itemize
+current class (
+\family typewriter
+Derived
+\family default
+)
+\end_layout
+
+\begin_layout Itemize
+parent classes in order (
+\family typewriter
+Base1
+\family default
+, 
+\family typewriter
+Base2
+\family default
+)
+\end_layout
+
+\begin_layout Itemize
+then parents of parent classes (
+\family typewriter
+Root
+\family default
+ and 
+\family typewriter
+\series bold
+object
+\family default
+\series default
+)
+\end_layout
+
+\begin_layout Standard
+Please note
+\end_layout
+
+\begin_layout Itemize
+the method of the 
+\family typewriter
+Root
+\family default
+ class is called only once
+\end_layout
+
+\begin_layout Itemize
+and always after the methods of all the 
+\family typewriter
+Base*
+\family default
+ classes
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+The 
+\family typewriter
+\series bold
+mro()
+\family default
+\series default
+ static method
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [2]: Derived.mro()
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[2]: [<class '__main__.Derived'>,
+\end_layout
+
+\begin_layout Plain Layout
+
+   ...:  <class '__main__.Base1'>,
+\end_layout
+
+\begin_layout Plain Layout
+
+   ...:  <class '__main__.Base2'>,
+\end_layout
+
+\begin_layout Plain Layout
+
+   ...:  <class '__main__.Root'>,
+\end_layout
+
+\begin_layout Plain Layout
+
+   ...:  <class 'object'>] 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Breaking the super chain
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+What if I forgot to call the 
+\family typewriter
+\series bold
+super()
+\series default
+.method
+\family default
+ in e.g.
+ 
+\family typewriter
+Base1
+\family default
+?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class Base1(Root):
+\end_layout
+
+\begin_layout Plain Layout
+
+    def __init__(self, arg):
+\end_layout
+
+\begin_layout Plain Layout
+
+        print('Base1(%r)' % arg)
+\end_layout
+
+\begin_layout Plain Layout
+
+        # super().__init__(arg)  # call chain broken
 \end_layout
 
 \end_inset
@@ -12776,12 +13955,20 @@ In [1]: def func(itemlist=[]):
 
 \end_layout
 
-\begin_layout FragileFrame
-\begin_inset Argument 4
+\begin_layout ExampleBlock
+\begin_inset Argument 2
 status open
 
 \begin_layout Plain Layout
-special methods (protocolls)
+Then Base1
+\family typewriter
+('arg')
+\family default
+ and 
+\family typewriter
+Root('arg')
+\family default
+ are never called
 \end_layout
 
 \end_inset
@@ -12798,17 +13985,413 @@ status open
 
 \begin_layout Plain Layout
 
-In [1]: def func(itemlist=[]):
+In [1]: obj = Derived('arg')
 \end_layout
 
 \begin_layout Plain Layout
 
-   ...:     itemlist.append(None)
+Derived('arg')
 \end_layout
 
 \begin_layout Plain Layout
 
-   ...:     print(itemlist)
+Base1('arg')
+\end_layout
+
+\begin_layout Plain Layout
+
+# Base1('arg')   # not called
+\end_layout
+
+\begin_layout Plain Layout
+
+# Root('arg')    # not called
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Inheriting form 
+\family typewriter
+\series bold
+object
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\family typewriter
+\series bold
+object
+\family default
+\series default
+ type was introduced in Python 2.2 to maintain compatibility with the old
+ object model:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+classes not inheriting from 
+\family typewriter
+\series bold
+object
+\family default
+\series default
+ maintained the old behavior
+\end_layout
+
+\begin_layout Itemize
+classes inheriting form 
+\family typewriter
+\series bold
+object
+\family default
+\series default
+ behave according to the new object model
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\emph on
+Old style classes
+\emph default
+ are still the default Python 2.7 while the new object model is to only one
+ in Python 3
+\end_layout
+
+\begin_layout Itemize
+In short: inheriting form 
+\family typewriter
+\series bold
+object
+\series default
+ is
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+mandatory in Python 2 if woy want the new object model
+\end_layout
+
+\begin_layout Itemize
+is redundant in Python 3
+\end_layout
+
+\begin_layout Itemize
+recommended in Python 3 if you want to write code that is compatible with
+ Python 2
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Special methods (protocols)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Methods starting and anding with a double underscore (
+\family typewriter
+\series bold
+__*__
+\family default
+\series default
+) are called 
+\emph on
+special methods
+\end_layout
+
+\begin_layout Itemize
+sometimes special methods receive a special treatment, e.g.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+__init__ is automatically called when an instance is created
+\end_layout
+
+\begin_layout Itemize
+operators: 
+\family typewriter
+__add__
+\family default
+ (
+\family typewriter
++
+\family default
+, and 
+\family typewriter
+sum
+\family default
+), 
+\family typewriter
+__sub__
+\family default
+ (
+\family typewriter
+-
+\family default
+), 
+\family typewriter
+__mul__
+\family default
+ (
+\family typewriter
+*
+\family default
+), 
+\family typewriter
+__truediv__
+\family default
+ (
+\family typewriter
+/
+\family default
+), 
+\family typewriter
+__floordiv__
+\family default
+ (
+\family typewriter
+//
+\family default
+), 
+\family typewriter
+__mod__
+\family default
+ (
+\family typewriter
+%
+\family default
+)
+\end_layout
+
+\begin_layout Itemize
+comparison: 
+\family typewriter
+__eq__
+\family default
+ (
+\family typewriter
+==
+\family default
+), 
+\family typewriter
+__ne__
+\family default
+ (
+\family typewriter
+!=
+\family default
+), 
+\family typewriter
+__lt__
+\family default
+ (
+\family typewriter
+<
+\family default
+), 
+\family typewriter
+__le__
+\family default
+ (
+\family typewriter
+<=
+\family default
+), 
+\family typewriter
+__gt__
+\family default
+ (
+\family typewriter
+>
+\family default
+), 
+\family typewriter
+__ge__
+\family default
+ (
+\family typewriter
+>=
+\family default
+)
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+__contains__
+\family default
+ (
+\family typewriter
+\series bold
+in
+\family default
+\series default
+)
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+__getitem__
+\family default
+, 
+\family typewriter
+__setitem__
+\family default
+ (indexing 
+\family typewriter
+[]
+\family default
+)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+..
+ or they are used to implement the so called 
+\series bold
+protocols
+\series default
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\family typewriter
+len(obj)
+\family default
+ (
+\family typewriter
+__len__
+\family default
+), 
+\family typewriter
+pow(num) (__pow__), abs(num) (__abs__), str(obj)
+\family default
+ (
+\family typewriter
+__str__
+\family default
+), 
+\family typewriter
+repr(obj)
+\family default
+ (
+\family typewriter
+__repr__
+\family default
+), 
+\family typewriter
+iter(obj)
+\family default
+ (
+\family typewriter
+__iter__
+\family default
+), 
+\family typewriter
+next(obj)
+\family default
+ (
+\family typewriter
+__next__
+\family default
+)
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\series bold
+with
+\family default
+\series default
+ statement (
+\family typewriter
+__enter__
+\family default
+, 
+\family typewriter
+__exit__
+\family default
+)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Defining/overloading special methods
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class UserType(object):
+\end_layout
+
+\begin_layout Plain Layout
+
+    def __repr__(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+        return 'bla bla bla'
 \end_layout
 
 \begin_layout Plain Layout
@@ -12817,10 +14400,242 @@ In [1]: def func(itemlist=[]):
 
 \begin_layout Plain Layout
 
+    def __enter__(self):
 \end_layout
 
 \begin_layout Plain Layout
 
+        print('acquiring resources')
+\end_layout
+
+\begin_layout Plain Layout
+
+        return self   # used by the 'as' clause
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+\end_layout
+
+\begin_layout Plain Layout
+
+        print('releasing resources')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+0.5
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [1]: obj = UserType()
+\end_layout
+
+\begin_layout Plain Layout
+
+In [2]: obj
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[2]: bla bla bla
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+0.5
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+In [3]: with obj:
+\end_layout
+
+\begin_layout Plain Layout
+
+   ...:     print('do job')
+\end_layout
+
+\begin_layout Plain Layout
+
+acquiring resources
+\end_layout
+
+\begin_layout Plain Layout
+
+do job
+\end_layout
+
+\begin_layout Plain Layout
+
+releasing resources 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Static methods/attributes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class UserType(object):
+\end_layout
+
+\begin_layout Plain Layout
+
+    STATIC_CONSTANT = None  # static attribute
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    def __init__(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+        self.default = self.STATIC_CONSTANT # note the self
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    @staticmethod           # property
+\end_layout
+
+\begin_layout Plain Layout
+
+    def some_static_method(*args, **kwargs):
+\end_layout
+
+\begin_layout Plain Layout
+
+        # NOTE: no self argument here
+\end_layout
+
+\begin_layout Plain Layout
+
+        print('static')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [1]: print(UserType.STATIC_CONSTANT)
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[1]: None
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [2]: # also works with obj.some_static_method()
+\end_layout
+
+\begin_layout Plain Layout
+
+In [3]: UserType.some_static_method()
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[3]: static
 \end_layout
 
 \end_inset
@@ -12847,6 +14662,62 @@ Properties
 \end_layout
 
 \begin_deeper
+\begin_layout Itemize
+Sometimes some of the attributes of an object are strictly related and have
+ values that depend on each other: e.g.
+ the radius and the diameter, circumference , area, etc.
+ of a circle
+\end_layout
+
+\begin_layout Itemize
+It is natural to think to them as attributes of the object
+\end_layout
+
+\begin_layout Itemize
+In other programming languages (e.g.
+ C++ and Java) it is recommended to keep attributes private or protected
+ and access them via 
+\emph on
+getter/setter methods
+\end_layout
+
+\begin_layout Itemize
+...
+ but 
+\emph on
+getter/setter methods
+\emph default
+ are boring
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+getter/setter methods
+\emph default
+ are basically a work-around for a limitation of the language: it is not
+ possible to keep in sync two attributes if one if them is modified directly
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Properties: use case
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
 \begin_inset listings
 lstparams "language=Python,showstringspaces=false,tabsize=4"
@@ -12855,17 +14726,22 @@ status open
 
 \begin_layout Plain Layout
 
-In [1]: def func(itemlist=[]):
+In [1]: c = Circle()
 \end_layout
 
 \begin_layout Plain Layout
 
-   ...:     itemlist.append(None)
+In [2]: c.radius = 3       # set the redius
 \end_layout
 
 \begin_layout Plain Layout
 
-   ...:     print(itemlist)
+In [3]: c.diameter
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[3]: 6                  # the diameter stay consistent
 \end_layout
 
 \begin_layout Plain Layout
@@ -12874,10 +14750,164 @@ In [1]: def func(itemlist=[]):
 
 \begin_layout Plain Layout
 
+In [4]: c.area
 \end_layout
 
 \begin_layout Plain Layout
 
+Out[4]: 28.274333882308138 # ...
+ and the area too
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [5]: c.diameter = 5     # now the diameter is changed
+\end_layout
+
+\begin_layout Plain Layout
+
+In [6]: c.radius
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[6]: 2.5                # hey, the radius has been
+\end_layout
+
+\begin_layout Plain Layout
+
+                           # updated as well!
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+In [7]: c.circumference
+\end_layout
+
+\begin_layout Plain Layout
+
+Out[7]: 15.707963267948966 # and the circumference too
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Defining Properties
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class Circle(Shape):
+\end_layout
+
+\begin_layout Plain Layout
+
+    def __init__(self, r=0):
+\end_layout
+
+\begin_layout Plain Layout
+
+        self._r = r            # one protected attribute
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    @property                  # decorator
+\end_layout
+
+\begin_layout Plain Layout
+
+    def r(self):               # getter
+\end_layout
+
+\begin_layout Plain Layout
+
+        retur n self._r
+\end_layout
+
+\begin_layout Plain Layout
+
+    @r.setter
+\end_layout
+
+\begin_layout Plain Layout
+
+    def r(self, value):        # setter
+\end_layout
+
+\begin_layout Plain Layout
+
+        self._r = value
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    @property
+\end_layout
+
+\begin_layout Plain Layout
+
+    def diameter(self):        # getter
+\end_layout
+
+\begin_layout Plain Layout
+
+        return 2 * self._r
+\end_layout
+
+\begin_layout Plain Layout
+
+    @diameter.setter
+\end_layout
+
+\begin_layout Plain Layout
+
+    def diameter(self, value): # setter: if omitted then
+\end_layout
+
+\begin_layout Plain Layout
+
+        self._r = value / 2    # the property is read-only
 \end_layout
 
 \end_inset

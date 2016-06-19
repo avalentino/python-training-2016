@@ -1,0 +1,7 @@
+strict digraph G {
+    node  [shape=record];
+    object [shape=ellipse, color=red];
+    object -> Root;
+    Root -> Base1 -> Derivate;
+    Root -> Base2 -> Derivate;
+}
