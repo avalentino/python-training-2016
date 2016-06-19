@@ -10159,6 +10159,243 @@ with lock, open(fname) as fd:
 
 \end_deeper
 \end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Iterating on files
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Iteration of text files
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+with open(src) as fin, open(dst, 'w') as fout:
+\end_layout
+
+\begin_layout Plain Layout
+
+    for line in fin:    # line oriented iteration
+\end_layout
+
+\begin_layout Plain Layout
+
+        line.rstrip('
+\backslash
+n')      # newlines are kept
+\end_layout
+
+\begin_layout Plain Layout
+
+        fout.write(line[::-1]) # reverse the line
+\end_layout
+
+\begin_layout Plain Layout
+
+        fout.rwite('
+\backslash
+n')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Iteration of binary files
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def simple_copy_binary_file(src, dst):
+\end_layout
+
+\begin_layout Plain Layout
+
+    with open(src, 'rb') as fin, 
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+         open(dst, 'wb') as fout: 
+\end_layout
+
+\begin_layout Plain Layout
+
+        for block in fd:       # default block size
+\end_layout
+
+\begin_layout Plain Layout
+
+            fout.write(block)  # is 4096 or 8192
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The 
+\family typewriter
+io
+\family default
+ module and the like-like interface
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\family typewriter
+io
+\family default
+ module provides Python’s main facilities for dealing with various types
+ of I/O: text I/O, binary I/O and raw I/O
+\end_layout
+
+\begin_layout Itemize
+A concrete object belonging to any of these categories is called a file
+ object (or 
+\series bold
+file-like object
+\series default
+)
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+io.StringIO
+\family default
+ and 
+\family typewriter
+io.BytesIO
+\family default
+ provide a 
+\series bold
+file-like interface
+\series default
+ for strings and buffers
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+The built-in 
+\family typewriter
+open
+\family default
+ factory (
+\family typewriter
+io.open
+\family default
+ in Python 3)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+open(file, mode='r', buffering=-1, encoding=None,
+\end_layout
+
+\begin_layout Plain Layout
+
+     errors=None, newline=None, closefd=True,
+\end_layout
+
+\begin_layout Plain Layout
+
+     opener=None)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
 \begin_layout Subsection
 Functions
 \end_layout
