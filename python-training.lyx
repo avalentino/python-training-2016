@@ -118,6 +118,10 @@
 Python Training
 \end_layout
 
+\begin_layout Subtitle
+Aresys internal course
+\end_layout
+
 \begin_layout Author
 A.
 \begin_inset space ~
@@ -127,7 +131,23 @@ Valentino
 \end_layout
 
 \begin_layout Date
-Aresys internal course June 2016
+June 2016
+\end_layout
+
+\begin_layout Institute
+Copyright (C) 2016 Antonio Valentino
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Creative Commons Attribution/Share-Alike (BY-SA) license."
+target "http://creativecommons.org/licenses/by-sa/3.0/"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
