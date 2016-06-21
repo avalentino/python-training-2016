@@ -2228,7 +2228,7 @@ True
 
 \begin_layout Plain Layout
 
->>> dir(s)
+>>> dir(str)
 \end_layout
 
 \begin_layout Plain Layout
@@ -10396,6 +10396,187 @@ open(file, mode='r', buffering=-1, encoding=None,
 
 \end_deeper
 \end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+File like objects
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+0.4
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Attributes
+\end_layout
+
+\begin_layout Itemize
+closed
+\end_layout
+
+\begin_layout Itemize
+newlines
+\end_layout
+
+\begin_layout Itemize
+line_buffering
+\end_layout
+
+\begin_layout Itemize
+encoding
+\end_layout
+
+\begin_layout Itemize
+errors
+\end_layout
+
+\begin_layout Itemize
+
+\color red
+name (real file only)
+\end_layout
+
+\begin_layout Itemize
+
+\color red
+mode (real file only)
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+0.3
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Methods
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+isatty
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+seekable
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+readable
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+writable
+\end_layout
+
+\begin_layout Itemize
+fileno
+\end_layout
+
+\begin_layout Itemize
+truncate
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+0.3
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+close
+\end_layout
+
+\begin_layout Itemize
+flush
+\end_layout
+
+\begin_layout Itemize
+read
+\end_layout
+
+\begin_layout Itemize
+readline
+\end_layout
+
+\begin_layout Itemize
+readlines
+\end_layout
+
+\begin_layout Itemize
+write
+\end_layout
+
+\begin_layout Itemize
+writelines
+\end_layout
+
+\begin_layout Itemize
+seek
+\end_layout
+
+\begin_layout Itemize
+tell
+\end_layout
+
+\end_deeper
+\end_deeper
 \begin_layout Subsection
 Functions
 \end_layout
@@ -10421,7 +10602,7 @@ Function definition
 \begin_deeper
 \begin_layout Column
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
