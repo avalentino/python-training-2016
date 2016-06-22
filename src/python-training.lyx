@@ -10204,24 +10204,24 @@ with open(src) as fin, open(dst, 'w') as fout:
 
 \begin_layout Plain Layout
 
-    for line in fin:    # line oriented iteration
+    for line in fin:      # line oriented iteration
 \end_layout
 
 \begin_layout Plain Layout
 
-        line.rstrip('
+        line = line.rstrip('
 \backslash
-n')      # newlines are kept
+n') # newlines are kept
 \end_layout
 
 \begin_layout Plain Layout
 
-        fout.write(line[::-1]) # reverse the line
+        fout.write(line[::-1])   # reverse the line
 \end_layout
 
 \begin_layout Plain Layout
 
-        fout.rwite('
+        fout.wite('
 \backslash
 n')
 \end_layout
@@ -10258,7 +10258,7 @@ status open
 
 \begin_layout Plain Layout
 
-def simple_copy_binary_file(src, dst):
+def simple_copy_file(src, dst):
 \end_layout
 
 \begin_layout Plain Layout
@@ -11147,7 +11147,7 @@ Out[1]: ([],)
 
 \begin_layout Plain Layout
 
-In [2]: print(bad_func(1))
+In [2]: bad_func(1)
 \end_layout
 
 \begin_layout Plain Layout
@@ -11161,7 +11161,7 @@ Out[2]: [1]
 
 \begin_layout Plain Layout
 
-In [3]: print(bad_func(2))
+In [3]: bad_func(2)
 \end_layout
 
 \begin_layout Plain Layout
@@ -11369,7 +11369,7 @@ def trace(func, *args, **kwargs):
 
 \begin_layout Plain Layout
 
-    print('%s(%s, %s)' % (name, args_str))
+    print('TRACE: %s(%s)' % (name, args_str))
 \end_layout
 
 \begin_layout Plain Layout
@@ -11387,7 +11387,7 @@ def trace(func, *args, **kwargs):
 
 \begin_layout Plain Layout
 
-    print('%s --> %r' % (name, ret))
+    print('TRACE: %s --> %r' % (name, ret))
 \end_layout
 
 \begin_layout Plain Layout
@@ -11464,7 +11464,7 @@ In [2]: trace(simple_sum, 10, b=20, c=30)
 
 \begin_layout Plain Layout
 
-simple_sum(10, c=30, b=20)
+TRACE: simple_sum(10, c=30, b=20)
 \end_layout
 
 \begin_layout Plain Layout
@@ -11474,7 +11474,7 @@ This is "simple_sum"
 
 \begin_layout Plain Layout
 
-simple_sum --> 60 
+TRACE: simple_sum --> 60 
 \end_layout
 
 \end_inset
@@ -11755,7 +11755,7 @@ def trace(func):
 
 \begin_layout Plain Layout
 
-        logging.debug('%s(%s, %s)' % (name, args_str))
+        logging.debug('%s(%s)' % (name, args_str))
 \end_layout
 
 \begin_layout Plain Layout
@@ -11928,7 +11928,7 @@ orgiveness than
 \series bold
 P
 \series default
-ermission (E 'più facile chiedere perdono che il permesso)
+ermission (É più facile chiedere perdono che il permesso)
 \end_layout
 
 \begin_layout Description
@@ -13588,7 +13588,7 @@ __name
 
 \end_inset
 
-) are not directly accessible fro outside the class definition code
+) are not directly accessible from outside the class definition code
 \end_layout
 
 \begin_layout Itemize
@@ -13751,7 +13751,7 @@ Inheritance
 
 \begin_deeper
 \begin_layout Itemize
-Python supports both simple and multiple inheritance
+Python supports both single and multiple inheritance
 \end_layout
 
 \begin_layout Itemize
@@ -14438,7 +14438,7 @@ Base1('arg')
 
 \begin_layout Plain Layout
 
-# Base1('arg')   # not called
+# Base2('arg')   # not called
 \end_layout
 
 \begin_layout Plain Layout
@@ -14699,7 +14699,9 @@ __contains__
 in
 \family default
 \series default
-)
+), 
+\family typewriter
+__call__
 \end_layout
 
 \begin_layout Itemize
@@ -15296,7 +15298,7 @@ class Circle(Shape):
 
 \begin_layout Plain Layout
 
-        retur n self._r
+        return self._r
 \end_layout
 
 \begin_layout Plain Layout
