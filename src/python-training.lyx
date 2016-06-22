@@ -10221,7 +10221,7 @@ n') # newlines are kept
 
 \begin_layout Plain Layout
 
-        fout.wite('
+        fout.write('
 \backslash
 n')
 \end_layout
