@@ -15360,12 +15360,12 @@ class Circle(Shape):
 Examples
 \end_layout
 
-\begin_layout Frame
+\begin_layout FragileFrame
 \begin_inset Argument 4
 status open
 
 \begin_layout Plain Layout
-Examples
+Setting up a virtual environment
 \end_layout
 
 \end_inset
@@ -15375,7 +15375,65 @@ Examples
 
 \begin_deeper
 \begin_layout Standard
-TBW
+\begin_inset listings
+lstparams "language=bash,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ python3 -m venv testenv
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$ ls testenv/
+\end_layout
+
+\begin_layout Plain Layout
+
+bin  include  lib  lib64  pyvenv.cfg  share
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$ source testenv/bin/activate
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+(testenv) $ which python
+\end_layout
+
+\begin_layout Plain Layout
+
+/home/antonio/python-training/examples/testenv/bin/python
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+(testenv) $ pip install pep8
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -15383,6 +15441,2987 @@ TBW
 
 \end_layout
 
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Exercise solution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def pretty_file_size_str(size):
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''String representation of file size
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Gets a size in bytes and return the its string
+\end_layout
+
+\begin_layout Plain Layout
+
+    representation using appropriate units.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    UNITS = ('Bytes', 'KB', 'MB', 'GB', 'TB', 'PB')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    for exponent, units_str in enumerate(UNITS):
+\end_layout
+
+\begin_layout Plain Layout
+
+        normalized_size = size / 1024**exponent
+\end_layout
+
+\begin_layout Plain Layout
+
+        if normalized_size < 1024:
+\end_layout
+
+\begin_layout Plain Layout
+
+            break
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    return '%.2f %s' % (normalized_size, units_str) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Using doctests
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def pretty_file_size_str(size):
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''String representation of file size
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    ...
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    >>> pretty_file_size_str(1.3 * 1024**5)
+\end_layout
+
+\begin_layout Plain Layout
+
+    '1.30 PB'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    >>> pretty_file_size_str(1.3 * 1024)
+\end_layout
+
+\begin_layout Plain Layout
+
+    '1.30 KB'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    >>> pretty_file_size_str(18)
+\end_layout
+
+\begin_layout Plain Layout
+
+    '18.00 Bytes'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    >>> pretty_file_size_str(0.3)
+\end_layout
+
+\begin_layout Plain Layout
+
+    '0.30 Bytes'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Running doctests
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ python3 -m doctest -v prettysize_exercise.py
+\end_layout
+
+\begin_layout Plain Layout
+
+Trying:
+\end_layout
+
+\begin_layout Plain Layout
+
+    pretty_file_size_str(1.3 * 1024**5)
+\end_layout
+
+\begin_layout Plain Layout
+
+Expecting:
+\end_layout
+
+\begin_layout Plain Layout
+
+    '1.30 PB'
+\end_layout
+
+\begin_layout Plain Layout
+
+ok
+\end_layout
+
+\begin_layout Plain Layout
+
+Trying:
+\end_layout
+
+\begin_layout Plain Layout
+
+    pretty_file_size_str(1.3 * 1024)
+\end_layout
+
+\begin_layout Plain Layout
+
+Expecting:
+\end_layout
+
+\begin_layout Plain Layout
+
+    '1.30 KB'
+\end_layout
+
+\begin_layout Plain Layout
+
+ok
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\begin_layout Plain Layout
+
+1 items passed all tests:
+\end_layout
+
+\begin_layout Plain Layout
+
+   4 tests in prettysize_exercise.pretty_file_size_str
+\end_layout
+
+\begin_layout Plain Layout
+
+4 tests in 2 items.
+\end_layout
+
+\begin_layout Plain Layout
+
+4 passed and 0 failed.
+\end_layout
+
+\begin_layout Plain Layout
+
+Test passed.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Exercise solution - Part 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+if __name__ == '__main__':
+\end_layout
+
+\begin_layout Plain Layout
+
+    import os, hashlib
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    # a.
+ print the fill module path
+\end_layout
+
+\begin_layout Plain Layout
+
+    print('filename: {}'.format(os.path.abspath(__file__)))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    # b.
+ print the module size
+\end_layout
+
+\begin_layout Plain Layout
+
+    size = os.path.getsize(__file__)
+\end_layout
+
+\begin_layout Plain Layout
+
+    print('size: {}'.format(pretty_file_size_str(size)))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    # c.
+ print the MD5 checksum of the module file
+\end_layout
+
+\begin_layout Plain Layout
+
+    md5 = hashlib.md5()
+\end_layout
+
+\begin_layout Plain Layout
+
+    with open(__file__, 'rb') as fd:
+\end_layout
+
+\begin_layout Plain Layout
+
+        for data in fd:
+\end_layout
+
+\begin_layout Plain Layout
+
+            md5.update(data)
+\end_layout
+
+\begin_layout Plain Layout
+
+    basename = os.path.basename(__file__)
+\end_layout
+
+\begin_layout Plain Layout
+
+    print('{} *{}'.format(basename, md5.hexdigest())) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Output
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ python3 prettysize_exercise.py
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+filename: /home/antonio/python-training/examples/prettysize_exercise.py
+\end_layout
+
+\begin_layout Plain Layout
+
+size: 1.28 KB
+\end_layout
+
+\begin_layout Plain Layout
+
+prettysize_exercise.py *20623019d6b3bdc22898c9b567262434 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Finding duplicate files
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Problem:
+\end_layout
+
+\begin_layout Itemize
+CLS maintains an FTP site for Sentinel 1 Mission Performance Center (MPC)
+ activities
+\end_layout
+
+\begin_layout Itemize
+Huge amount of data
+\end_layout
+
+\begin_layout Itemize
+Organized in a directory tree
+\end_layout
+
+\begin_layout Itemize
+Unfortunately the same product can be present in different directories
+\end_layout
+
+\begin_layout Itemize
+...
+ even worst, the same product processed by different entities or at different
+ time is stored with different file name
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+S1A_S6_RAW__0ADH_20120101T034339_20120101T034400_001771_000001_F6EC.SAFE
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Requirements
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Write a Python program that finds all duplicate files in the specified directory
+ and:
+\end_layout
+
+\begin_layout Itemize
+prints the total number of files
+\end_layout
+
+\begin_layout Itemize
+prints the total number of duplicate files
+\end_layout
+
+\begin_layout Itemize
+(optionally) computes the amount of disk space wasted by duplicates
+\end_layout
+
+\begin_layout Itemize
+(optionally) prints the list of duplicate files
+\end_layout
+
+\begin_layout Standard
+The program shall have a simple command line user interface also having
+ an option for printing the usage documentation
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Data structure
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Duplicate files can be stored in a dictionary:
+\end_layout
+
+\begin_layout Description
+keys: are base names of files (and are unique)
+\end_layout
+
+\begin_layout Description
+values: are a list of full path names of all replicas
+\end_layout
+
+\begin_layout Standard
+The dictionary is associated to 
+\family typewriter
+Result
+\family default
+ class that also provides methods to manipulate it
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+result.data = {
+\end_layout
+
+\begin_layout Plain Layout
+
+    'A.SAFE': ['PATH/1/A.SAFE', 'PATH/2/A.SAFE', ...],
+\end_layout
+
+\begin_layout Plain Layout
+
+    'B.SAFE': ['PATH/1/B.SAFE', 'PATH/2/B.SAFE'],
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Test Driven Development approach (TDD)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+write tests 
+\series bold
+before
+\series default
+ the program code
+\end_layout
+
+\begin_layout Itemize
+use automated tests for unit testing
+\end_layout
+
+\begin_layout Itemize
+tests express specifications
+\end_layout
+
+\begin_layout Itemize
+the SW is OK when it passes all tests
+\end_layout
+
+\begin_layout Itemize
+iterative development
+\end_layout
+
+\begin_layout Itemize
+short development cycles
+\end_layout
+
+\begin_layout Itemize
+phases:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+write automatic tests for the new function (specifications/API design):
+ the code still doesn't exist so tests fail
+\end_layout
+
+\begin_layout Itemize
+development of the new function by writing the minimal amount code to make
+ all tests pass
+\end_layout
+
+\begin_layout Itemize
+refactoring: re-work the code to harmonize all parts of the program and
+ have a better overall design.
+ All test shall pass untouched
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Basic tests for our duplicate file finder
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class ScanDuplicatesTestCase(unittest.TestCase,
+\end_layout
+
+\begin_layout Plain Layout
+
+                             CreateTestDirMixin):
+\end_layout
+
+\begin_layout Plain Layout
+
+    def test_scan_result(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+        result = s1duplicates.scan_duplicates(self.root)
+\end_layout
+
+\begin_layout Plain Layout
+
+        self.assertTrue(hasattr(result, 'data'))	
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+    def test_scan_result_data(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+        result = s1duplicates.scan_duplicates(self.root)
+\end_layout
+
+\begin_layout Plain Layout
+
+        self.assertTrue(
+\end_layout
+
+\begin_layout Plain Layout
+
+            isinstance(result, collections.Mapping))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+    def test_duplicate_number(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+        result = s1duplicates.scan_duplicates(self.root)
+\end_layout
+
+\begin_layout Plain Layout
+
+        self.assertEquel(result.duplicate_count(),
+\end_layout
+
+\begin_layout Plain Layout
+
+                         len(self.DATASET)) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Test directory
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+defined at 
+\family typewriter
+TestCase
+\family default
+ level
+\end_layout
+
+\begin_layout Itemize
+automatically generated before each test execution
+\end_layout
+
+\begin_layout Itemize
+automatically removed after each test case execution
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Same 
+\family typewriter
+self.DATASET
+\family default
+ replicated in two places
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+dataIN
+\end_layout
+
+\begin_layout Plain Layout
+
++-- S1A
+\end_layout
+
+\begin_layout Plain Layout
+
+    +-- S1A_IW
+\end_layout
+
+\begin_layout Plain Layout
+
+    |   |-- S1A_IW_RAW__0A
+\end_layout
+
+\begin_layout Plain Layout
+
+    |   |   +-- S1A_IW_RAW__0ADV_20160619T053500.SAFE
+\end_layout
+
+\begin_layout Plain Layout
+
+    |   +-- S1A_IW_RAW__0S
+\end_layout
+
+\begin_layout Plain Layout
+
+    |       +-- S1A_IW_RAW__0SDV_20160619T053500.SAFE
+\end_layout
+
+\begin_layout Plain Layout
+
+    +-- DT_SITE
+\end_layout
+
+\begin_layout Plain Layout
+
+        |-- S1A_IW_RAW__0ADV_20160619T053500.SAFE
+\end_layout
+
+\begin_layout Plain Layout
+
+        +-- S1A_IW_RAW__0SDV_20160619T053500.SAFE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Unit testing framework
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Python provides a complete unit testing framework
+\end_layout
+
+\begin_layout Itemize
+the 
+\family typewriter
+unittest
+\family default
+ package of the standard library
+\end_layout
+
+\begin_layout Itemize
+it is based on the xUnit architecture.
+ Main elements
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+test fixtures
+\end_layout
+
+\begin_layout Itemize
+test cases
+\end_layout
+
+\begin_layout Itemize
+test suites
+\end_layout
+
+\begin_layout Itemize
+test runners
+\end_layout
+
+\end_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Automatic test discovery
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+All classes inheriting form 
+\family typewriter
+unittest.TestCase
+\family default
+ are tests 
+\end_layout
+
+\begin_layout Itemize
+Only methods starting with 
+\family typewriter
+test*
+\family default
+ are assumed to be tests
+\end_layout
+
+\begin_layout Itemize
+There is a machinery to automatically discover all tests in a source tree:
+ it relies on naming conventions and only files starting with 
+\family typewriter
+test*.py
+\family default
+ are considered
+\end_layout
+
+\end_deeper
+\begin_layout Block
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+unittest
+\family default
+ package
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class TestStringMethods(unittest.TestCase):
+\end_layout
+
+\begin_layout Plain Layout
+
+    def setUp(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+        # prepare preconditions before test execution:
+\end_layout
+
+\begin_layout Plain Layout
+
+        # objects creation, initialization, etc.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    def tearDown(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+        # perform cleanup actions after the test execution
+\end_layout
+
+\begin_layout Plain Layout
+
+        # e.g.
+ remove files, closes connections, etc.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    def test_something(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+        # specific test case: use assertions
+\end_layout
+
+\begin_layout Plain Layout
+
+        self.assertEqual(something, something_else)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if __name__ == '__main__':
+\end_layout
+
+\begin_layout Plain Layout
+
+    # run all tests when executed as a script
+\end_layout
+
+\begin_layout Plain Layout
+
+    unittest.main()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Mixin classes in Python
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Mixin classes factorize some common behavior that can be part of possibly
+ unrelated classes
+\end_layout
+
+\begin_layout Itemize
+Usually mixins does not have a complete state
+\end_layout
+
+\begin_layout Itemize
+Features of a mixin are included by inheriting it
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class CreateTestDirMixin(object):
+\end_layout
+
+\begin_layout Plain Layout
+
+    ROOT = 'dataIN'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    def setUp(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+        self.testdir = tempfile.mkdtemp()
+\end_layout
+
+\begin_layout Plain Layout
+
+        self.root = os.path.join(self.testdir, self.ROOT)
+\end_layout
+
+\begin_layout Plain Layout
+
+        self._setup_test_dataset()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    def tearDown(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+        shutil.rmtree(self.testdir)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Creating the dataset tree
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+DATASET = ( ...
+ )
+\end_layout
+
+\begin_layout Plain Layout
+
+REPLICA_DIR = 'S1A/DT_SITE'
+\end_layout
+
+\begin_layout Plain Layout
+
+DEFAULTSIZE = 1024
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def _setup_test_dataset(self)
+\end_layout
+
+\begin_layout Plain Layout
+
+    replicadir = os.path.join(self.root, self.REPLICA_DIR)
+\end_layout
+
+\begin_layout Plain Layout
+
+    os.makedirs(replicadir)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    for path in self.DATASET:
+\end_layout
+
+\begin_layout Plain Layout
+
+        dirname, basename = os.path.split(path)
+\end_layout
+
+\begin_layout Plain Layout
+
+        dirname = os.path.join(self.root, dirname)
+\end_layout
+
+\begin_layout Plain Layout
+
+        os.makedirs(dirname)
+\end_layout
+
+\begin_layout Plain Layout
+
+        filename = os.path.join(dirname, basename)
+\end_layout
+
+\begin_layout Plain Layout
+
+        create_dummy_file(filename, self.DEFAULTSIZE) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        replica = os.path.join(replicadir, basename)
+\end_layout
+
+\begin_layout Plain Layout
+
+        create_dummy_file(replica, self.DEFAULTSIZE)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Creating dummy files
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def create_dummy_file(filename, size=None):
+\end_layout
+
+\begin_layout Plain Layout
+
+    with open(filename, 'wb') as fd:
+\end_layout
+
+\begin_layout Plain Layout
+
+        if size:
+\end_layout
+
+\begin_layout Plain Layout
+
+            fd.seek(size-1)
+\end_layout
+
+\begin_layout Plain Layout
+
+            fd.write(b'
+\backslash
+0')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+using the 
+\family typewriter
+filelike_obj.seek
+\family default
+ method it is possible to create potentially huge files without managing
+ large buffers and performing virtually no I/O: just one byte is written
+\end_layout
+
+\begin_layout Itemize
+please note the 
+\family typewriter
+bytes
+\family default
+ literal (
+\family typewriter
+b'
+\backslash
+0'
+\family default
+)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Run the test suite
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ python3 test_s1duplicates.py
+\end_layout
+
+\begin_layout Plain Layout
+
+====================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+ERROR: test_scan_result (__main__.ScanDuplicatesTestCase)
+\end_layout
+
+\begin_layout Plain Layout
+
+----------------------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+Traceback ...
+\end_layout
+
+\begin_layout Plain Layout
+
+result = s1duplicates.scan_duplicates(self.root)
+\end_layout
+
+\begin_layout Plain Layout
+
+AttributeError: module 's1duplicates' has no attribute
+\end_layout
+
+\begin_layout Plain Layout
+
+'scan_duplicates'
+\end_layout
+
+\begin_layout Plain Layout
+
+====================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\begin_layout Plain Layout
+
+Ran 3 tests in 0.004s
+\end_layout
+
+\begin_layout Plain Layout
+
+FAILED (errors=3)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+None of the test pass at this stage, we just have an empty 
+\family typewriter
+s1duplicate.py
+\family default
+ module
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Step 2: write the code
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def scan_duplicates(dataroot):
+\end_layout
+
+\begin_layout Plain Layout
+
+    scanned_files = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+    data = defaultdict(list)
+\end_layout
+
+\begin_layout Plain Layout
+
+    for root, dirs, files in os.walk(dataroot):
+\end_layout
+
+\begin_layout Plain Layout
+
+        scanned_files += len(files)
+\end_layout
+
+\begin_layout Plain Layout
+
+        for filename in files:
+\end_layout
+
+\begin_layout Plain Layout
+
+            fullpath = os.path.join(root, filename)
+\end_layout
+
+\begin_layout Plain Layout
+
+            if not os.path.islink(fullpath):
+\end_layout
+
+\begin_layout Plain Layout
+
+                data[filename].append(fullpath)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    # remove non duplicates
+\end_layout
+
+\begin_layout Plain Layout
+
+    for key in list(data.keys()):  # note: copy keys
+\end_layout
+
+\begin_layout Plain Layout
+
+        val = data[key]
+\end_layout
+
+\begin_layout Plain Layout
+
+        if len(val) < 2:
+\end_layout
+
+\begin_layout Plain Layout
+
+            del data[key]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    return Result(data, scanned_files)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+...
+ and the 
+\family typewriter
+Result
+\family default
+ class
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class Result(object):
+\end_layout
+
+\begin_layout Plain Layout
+
+    def __init__(self, data, scanned_files):
+\end_layout
+
+\begin_layout Plain Layout
+
+        self.data = data
+\end_layout
+
+\begin_layout Plain Layout
+
+        self.scanned_files = scanned_files
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    def duplicate_count(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+        values = self.data.values()
+\end_layout
+
+\begin_layout Plain Layout
+
+        return sum(len(item) - 1 for item in values)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Test execution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ python3 test_s1duplicates.py
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\begin_layout Plain Layout
+
+-----------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+Ran 3 tests in 0.003s
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+OK 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+New requirement: computation of wasted disk space
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def test_duplicate_size(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+    result = s1duplicates.scan_duplicates(self.root)
+\end_layout
+
+\begin_layout Plain Layout
+
+    size = self.DEFAULTSIZE * len(self.DATASET)
+\end_layout
+
+\begin_layout Plain Layout
+
+    self.assertEqual(result.duplicate_size(), size) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Test execution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ERROR: test_duplicate_size ...
+\end_layout
+
+\begin_layout Plain Layout
+
+-----------------------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+Traceback (most recent call last): ...
+\end_layout
+
+\begin_layout Plain Layout
+
+    self.assertEqual(result.duplicate_size(), size)
+\end_layout
+
+\begin_layout Plain Layout
+
+AttributeError: 'Result' object has no attribute
+\end_layout
+
+\begin_layout Plain Layout
+
+'duplicate_size'
+\end_layout
+
+\begin_layout Plain Layout
+
+-----------------------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+Ran 4 tests in 0.005s
+\end_layout
+
+\begin_layout Plain Layout
+
+FAILED (errors=1)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+New requirement ...
+ implementation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def duplicate_size(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+    size = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+    for key in self.data:
+\end_layout
+
+\begin_layout Plain Layout
+
+        duplicates = self.data[key]
+\end_layout
+
+\begin_layout Plain Layout
+
+        filename = duplicates[0]    # first path
+\end_layout
+
+\begin_layout Plain Layout
+
+        filesize = os.path.getsize(filename)
+\end_layout
+
+\begin_layout Plain Layout
+
+        size += filesize * (len(duplicates) - 1)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    return size 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Test execution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+....
+\end_layout
+
+\begin_layout Plain Layout
+
+Ran 4 tests in 0.005s
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+OK 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Command line interface
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\scriptsize},showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ python3 s1duplicates.py -h
+\end_layout
+
+\begin_layout Plain Layout
+
+usage: s1duplicates.py [-h] [--version] [-s] [-l] [-v] dataroot
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Search all duplicate files in the specified directory tree
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+positional arguments:
+\end_layout
+
+\begin_layout Plain Layout
+
+  dataroot            the root of the directory tree to scan
+\end_layout
+
+\begin_layout Plain Layout
+
+                      for duplicates
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+optional arguments:
+\end_layout
+
+\begin_layout Plain Layout
+
+  -h, --help          show this help message and exit
+\end_layout
+
+\begin_layout Plain Layout
+
+  --version           show program's version number and exit
+\end_layout
+
+\begin_layout Plain Layout
+
+  -s, --compute-size  compute the total size of duplicate files
+\end_layout
+
+\begin_layout Plain Layout
+
+                      (default: False)
+\end_layout
+
+\begin_layout Plain Layout
+
+  -l, --list-files    dump the entire list of duplicate files
+\end_layout
+
+\begin_layout Plain Layout
+
+                      (default: False)
+\end_layout
+
+\begin_layout Plain Layout
+
+  -v, --verbose       print verbose help messages
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Sample output
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ python3 s1duplicates.py dataIN
+\end_layout
+
+\begin_layout Plain Layout
+
+2 duplicate files found
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$ python3 s1duplicates.py -s dataIN
+\end_layout
+
+\begin_layout Plain Layout
+
+2 duplicate files found
+\end_layout
+
+\begin_layout Plain Layout
+
+2.00 Bytes of duplicate files can be removed
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$ python3 s1duplicates.py -l dataIN
+\end_layout
+
+\begin_layout Plain Layout
+
+2 duplicate files found
+\end_layout
+
+\begin_layout Plain Layout
+
+Duplicates in "dataIN/"
+\end_layout
+
+\begin_layout Plain Layout
+
+defaultdict(<class 'list'>,
+\end_layout
+
+\begin_layout Plain Layout
+
+{'BASENAME_1.SAFE': ['FULLPATH_1.SAFE', 'FULLPATH_2.SAFE'],
+\end_layout
+
+\begin_layout Plain Layout
+
+ 'BASENAME_2.SAFE': ['FULLPATH_3.SAFE', 'FULLPATH_4.SAFE']}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Unittests for the command line UI (1/3)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class UiTestCase(CreateTestDirMixin, unittest.TestCase):
+\end_layout
+
+\begin_layout Plain Layout
+
+    VERSION = '1.0'
+\end_layout
+
+\begin_layout Plain Layout
+
+    BASEARGS = [sys.executable, '-u', 's1duplicates.py']
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    def test_version(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+        args = self.BASEARGS + ['--version']
+\end_layout
+
+\begin_layout Plain Layout
+
+        outbytes = subprocess.check_output(args)
+\end_layout
+
+\begin_layout Plain Layout
+
+        out = outbytes.decode('utf-8')
+\end_layout
+
+\begin_layout Plain Layout
+
+        self.assertTrue(self.VERSION in out)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    def test_help(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+        args = self.BASEARGS + ['--help']
+\end_layout
+
+\begin_layout Plain Layout
+
+        outbytes = subprocess.check_output(args)
+\end_layout
+
+\begin_layout Plain Layout
+
+        out = outbytes.decode('utf-8')
+\end_layout
+
+\begin_layout Plain Layout
+
+        self.assertTrue(out.startswith('usage:'))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Unittests for the command line UI (2/3)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def test_duplicate_number(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+    args = self.BASEARGS + [self.root]
+\end_layout
+
+\begin_layout Plain Layout
+
+    outbytes = subprocess.check_output(args)
+\end_layout
+
+\begin_layout Plain Layout
+
+    out = outbytes.decode('utf-8')
+\end_layout
+
+\begin_layout Plain Layout
+
+    self.assertEqual(
+\end_layout
+
+\begin_layout Plain Layout
+
+        out.strip(),
+\end_layout
+
+\begin_layout Plain Layout
+
+        '%d duplicate files found' % len(self.DATASET))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def test_duplicate_size(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+    args = self.BASEARGS + ['-s', self.root]
+\end_layout
+
+\begin_layout Plain Layout
+
+    outbytes = subprocess.check_output(args)
+\end_layout
+
+\begin_layout Plain Layout
+
+    out = outbytes.decode('utf-8')
+\end_layout
+
+\begin_layout Plain Layout
+
+    count_line, size_line = out.strip().splitlines()
+\end_layout
+
+\begin_layout Plain Layout
+
+    size = self.DEFAULTSIZE * len(self.DATASET)
+\end_layout
+
+\begin_layout Plain Layout
+
+    self.assertEqual(
+\end_layout
+
+\begin_layout Plain Layout
+
+        size_line,
+\end_layout
+
+\begin_layout Plain Layout
+
+        'duplicate file size: %s' % pretty_file_size_str(size))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+A bit of regular expressions (
+\family typewriter
+re
+\family default
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+ITEM_RE
+\end_layout
+
+\end_inset
+
+
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+"'(?P<key>.*
+\backslash
+.SAFE)':
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+[(?P<values>'.*
+\backslash
+.SAFE'(,
+\backslash
+s+'.*
+\backslash
+.SAFE')*
+\backslash
+])"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+.: matches any character
+\end_layout
+
+\begin_layout Description
+.*: matches an arbitrary number of characters
+\end_layout
+
+\begin_layout Description
+
+\backslash
+.: (escaped dot) matches a dot
+\end_layout
+
+\begin_layout Description
+.*
+\backslash
+.SAFE: is equivalent to the glob expression 
+\family typewriter
+*.SAFE
+\end_layout
+
+\begin_layout Description
+(?P<key>.*
+\backslash
+.SAFE): the matched expression is saved into the group named 
+\begin_inset Quotes eld
+\end_inset
+
+key
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+
+\backslash
+s: matches ant white character
+\end_layout
+
+\begin_layout Description
+
+\backslash
+s+: matches one or more (at least one) white character
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Unittests for the command line UI (3/3)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def test_duplicate_list(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+    args = self.BASEARGS + ['-l', self.root]
+\end_layout
+
+\begin_layout Plain Layout
+
+    outbytes = subprocess.check_output(args)
+\end_layout
+
+\begin_layout Plain Layout
+
+    out = outbytes.decode('utf-8')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    keys = set(
+\end_layout
+
+\begin_layout Plain Layout
+
+        os.path.basename(item) for item in self.DATASET)
+\end_layout
+
+\begin_layout Plain Layout
+
+    found_keys = []
+\end_layout
+
+\begin_layout Plain Layout
+
+    for i, mobj in enumerate(self.ITEM_RE.finditer(out)):
+\end_layout
+
+\begin_layout Plain Layout
+
+        key = mobj.group('key')
+\end_layout
+
+\begin_layout Plain Layout
+
+        self.assertTrue(key in keys)
+\end_layout
+
+\begin_layout Plain Layout
+
+        found_keys.append(key)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        values = mobj.group('values')
+\end_layout
+
+\begin_layout Plain Layout
+
+        self.assertEqual(len(values.split(',')), 2)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    self.assertEqual(len(found_keys), len(keys))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Command line UI implementation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+parser = ArgumentParser(description='Search all '
+\end_layout
+
+\begin_layout Plain Layout
+
+    'duplicate files in the specified directory tree')
+\end_layout
+
+\begin_layout Plain Layout
+
+parser.add_argument(
+\end_layout
+
+\begin_layout Plain Layout
+
+    '--version', action='version', version='%(prog)s v1.0')
+\end_layout
+
+\begin_layout Plain Layout
+
+parser.add_argument('-s', '--compute-size',
+\end_layout
+
+\begin_layout Plain Layout
+
+    action='store_true', default=False, help='compute '
+\end_layout
+
+\begin_layout Plain Layout
+
+    'the total size of duplicate files '
+\end_layout
+
+\begin_layout Plain Layout
+
+    '(default: %(default)s)')
+\end_layout
+
+\begin_layout Plain Layout
+
+parser.add_argument('-l', '--list-files',
+\end_layout
+
+\begin_layout Plain Layout
+
+    action='store_true', default=False,
+\end_layout
+
+\begin_layout Plain Layout
+
+    help='dump the entire list of duplicate files '
+\end_layout
+
+\begin_layout Plain Layout
+
+    '(default: %(default)s)')
+\end_layout
+
+\begin_layout Plain Layout
+
+parser.add_argument('-v', '--verbose', action='store_true',
+\end_layout
+
+\begin_layout Plain Layout
+
+    default=False, help='print verbose help messages')
+\end_layout
+
+\begin_layout Plain Layout
+
+parser.add_argument('dataroot', help='the root of the '
+\end_layout
+
+\begin_layout Plain Layout
+
+    'directory tree to scan for duplicates')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Main program
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+args = parser.parse_args()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if args.verbose:
+\end_layout
+
+\begin_layout Plain Layout
+
+    logging.getLogger().setLevel(logging.DEBUG)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+result = scan_duplicates(args.dataroot)
+\end_layout
+
+\begin_layout Plain Layout
+
+logging.info(
+\end_layout
+
+\begin_layout Plain Layout
+
+    '%d duplicate files found' % result.duplicate_count())
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if args.compute_size:
+\end_layout
+
+\begin_layout Plain Layout
+
+    size = result.duplicate_size()
+\end_layout
+
+\begin_layout Plain Layout
+
+    sizestr = prettysize.pretty_file_size_str(size)
+\end_layout
+
+\begin_layout Plain Layout
+
+    logging.info(
+\end_layout
+
+\begin_layout Plain Layout
+
+        '%s of duplicate files can be removed' % sizestr)
+\end_layout
+
+\begin_layout Plain Layout
+
+if args.list_files:
+\end_layout
+
+\begin_layout Plain Layout
+
+    logging.info('Duplicates in "%s"' % args.dataroot)
+\end_layout
+
+\begin_layout Plain Layout
+
+    pprint.pprint(result.data) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Section
 References
 \end_layout
@@ -15538,6 +18577,50 @@ newblock
 \end_inset
 
  Apress 2009
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+Alex Martelli
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newblock
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "Python in a Nutshell, 3rd Edition"
+target "https://library.oreilly.com/book/0636920012610/python-in-a-nutshell/toc"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newblock
+\end_layout
+
+\end_inset
+
+ O'Reilly 2016
 \end_layout
 
 \begin_layout Bibliography
