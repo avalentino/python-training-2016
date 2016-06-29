@@ -15946,7 +15946,7 @@ $ python3 prettysize_exercise.py
 
 \begin_layout Plain Layout
 
-filename: /home/antonio/python-training/examples/prettysize_exercise.py
+filename: /home/antonio/python-training/.../prettysize.py
 \end_layout
 
 \begin_layout Plain Layout
@@ -16258,12 +16258,12 @@ status open
 
 \begin_layout Plain Layout
 
-class ScanDuplicatesTestCase(unittest.TestCase,
+class ScanDuplicatesTestCase(CreateTestDirMixin,
 \end_layout
 
 \begin_layout Plain Layout
 
-                             CreateTestDirMixin):
+                             unittest.TestCase):
 \end_layout
 
 \begin_layout Plain Layout
@@ -16343,7 +16343,7 @@ status open
 
 \begin_layout Plain Layout
 
-        self.assertEquel(result.duplicate_count(),
+        self.assertEqual(result.duplicate_count(),
 \end_layout
 
 \begin_layout Plain Layout
@@ -18439,6 +18439,138 @@ if args.list_files:
 \begin_layout Plain Layout
 
     pprint.pprint(result.data) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Final test
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\scriptsize},showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ python3 -m unittest -v test_s1duplicates.py
+\end_layout
+
+\begin_layout Plain Layout
+
+test_duplicate_number (test_s1duplicates.ScanDuplicatesTestCase)
+\end_layout
+
+\begin_layout Plain Layout
+
+    ...
+ ok
+\end_layout
+
+\begin_layout Plain Layout
+
+test_duplicate_size (test_s1duplicates.ScanDuplicatesTestCase)
+\end_layout
+
+\begin_layout Plain Layout
+
+    ...
+ ok
+\end_layout
+
+\begin_layout Plain Layout
+
+test_scan_result (test_s1duplicates.ScanDuplicatesTestCase)
+\end_layout
+
+\begin_layout Plain Layout
+
+    ...
+ ok
+\end_layout
+
+\begin_layout Plain Layout
+
+test_scan_result_data (test_s1duplicates.ScanDuplicatesTestCase)
+\end_layout
+
+\begin_layout Plain Layout
+
+    ...
+ ok
+\end_layout
+
+\begin_layout Plain Layout
+
+test_duplicate_list (test_s1duplicates.UiTestCase) ...
+ ok
+\end_layout
+
+\begin_layout Plain Layout
+
+test_duplicate_number (test_s1duplicates.UiTestCase) ...
+ ok
+\end_layout
+
+\begin_layout Plain Layout
+
+test_duplicate_size (test_s1duplicates.UiTestCase) ...
+ ok
+\end_layout
+
+\begin_layout Plain Layout
+
+test_help (test_s1duplicates.UiTestCase) ...
+ ok
+\end_layout
+
+\begin_layout Plain Layout
+
+test_version (test_s1duplicates.UiTestCase) ...
+ ok
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+------------------------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+Ran 9 tests in 0.267s
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+OK 
 \end_layout
 
 \end_inset
