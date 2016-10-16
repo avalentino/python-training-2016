@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass beamer
 \begin_preamble
 \usetheme{Warsaw}
@@ -43,16 +45,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -278,6 +280,10 @@ Outline
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -359,11 +365,19 @@ Language features
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 General-purpose programming language
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -386,6 +400,10 @@ Scripting, GUI, Web, scientific programming, ...
 \end_deeper
 \begin_layout Itemize
 Multi paradigm
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -408,6 +426,10 @@ OOP, procedural, and also a little bit functional
 \end_deeper
 \begin_layout Itemize
 Interpreted
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -433,7 +455,10 @@ Focus on readability and productivity
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -448,11 +473,19 @@ Typing
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Dynamically typed
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -471,6 +504,10 @@ differently
 \end_deeper
 \begin_layout Itemize
 Strongly typed
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -488,7 +525,10 @@ differently
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -503,6 +543,10 @@ Typing: examples
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -514,6 +558,10 @@ status open
 Perl
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -542,7 +590,10 @@ DB<1> print "2" + 2
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -596,7 +647,10 @@ implicitly
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -611,11 +665,19 @@ Language versions
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Python 2
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -634,6 +696,10 @@ end of life: 2020
 \end_deeper
 \begin_layout Itemize
 Python 3
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -710,7 +776,10 @@ from __future__ import print_function
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -725,11 +794,19 @@ Implementations
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 CPython (the reference and most widely used implementation written in C)
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -750,6 +827,10 @@ https://www.python.org
 \end_deeper
 \begin_layout Itemize
 PyPy (A fast python implementation with a JIT compiler)
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -774,6 +855,10 @@ compatibility: Python 2.7.10 and Python 3.2.5 (beta)
 \end_deeper
 \begin_layout Itemize
 IronPython (Python running on .NET)
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -798,6 +883,10 @@ support for Python 2.7
 \end_deeper
 \begin_layout Itemize
 Jython (Python running on the Java Virtual Machine)
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -821,7 +910,10 @@ support for Python 2.7
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -833,6 +925,10 @@ status open
 Distributions
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -866,6 +962,10 @@ https://www.continuum.io/why-anaconda
 \end_inset
 
 : Anaconda (Python 2 and 3 on Linux/Windows/Mac):
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -945,6 +1045,10 @@ Hello, World!
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -977,7 +1081,10 @@ print('Hello, World!')
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1038,7 +1145,10 @@ class HelloWorld
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1050,6 +1160,10 @@ status open
 Interpreter invocation
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1085,7 +1199,10 @@ $ python3 script.py
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1158,7 +1275,10 @@ more information.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1177,6 +1297,10 @@ Jupyter
 IPython)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1223,6 +1347,10 @@ status open
 Links
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1306,6 +1434,10 @@ Getting help
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1325,6 +1457,10 @@ help
  builtin function
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1407,6 +1543,10 @@ help
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1457,7 +1597,10 @@ class str(object)
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1469,6 +1612,10 @@ status open
 Getting help in IPython
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1566,7 +1713,10 @@ Otherwise, returns the result of object.__str__()
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1584,10 +1734,17 @@ docstrings
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1698,6 +1855,10 @@ the
 first string
 \series default
  in the body of
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1745,6 +1906,10 @@ status open
 Note
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1802,7 +1967,10 @@ status open
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1817,10 +1985,17 @@ Introspection
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -2033,7 +2208,10 @@ Out[9]: ['__add__',
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2045,6 +2223,10 @@ status open
 All is an object
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2075,10 +2257,17 @@ Also functions, types and modules are
 object
 \series default
 s
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -2244,7 +2433,10 @@ True
 \end_deeper
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2259,6 +2451,10 @@ Indentation
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2270,6 +2466,10 @@ status open
 Important
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2298,6 +2498,10 @@ Hint
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2316,7 +2520,10 @@ always use 4 (four) spaces to indent your code (it is the most widely adopted
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2328,6 +2535,10 @@ status open
 Pretty file size
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2428,7 +2639,10 @@ def pretty_file_size_str(size):
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2440,6 +2654,10 @@ status open
 Let's use our function
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2501,7 +2719,10 @@ Out[5]: 19.889 KB
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2518,10 +2739,17 @@ Boxes
 \end_inset
 
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -2652,7 +2880,10 @@ textwidth
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2669,10 +2900,17 @@ Labels
 \end_inset
 
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -2807,10 +3045,17 @@ Summary
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -2881,6 +3126,10 @@ textwidth
 
 \begin_layout Itemize
 built-ins functions and types:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2929,6 +3178,10 @@ str
 \end_deeper
 \begin_layout Itemize
 keywords and statements
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2982,11 +3235,19 @@ Overview
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Immutable types:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3041,6 +3302,10 @@ False
 \end_deeper
 \begin_layout Itemize
 Mutable types
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3076,7 +3341,10 @@ many others ...
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3088,6 +3356,10 @@ status open
 Immutable objects
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3131,7 +3403,10 @@ Hashable
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3143,6 +3418,10 @@ status open
 Numeric types
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3237,7 +3516,10 @@ Out[7]: (int, 36893488147419103232)
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3249,6 +3531,10 @@ status open
 Numeric casts and conversion
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3314,7 +3600,10 @@ Out[10]: 1.0
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3350,7 +3639,10 @@ Out[11]: 0.013
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3362,6 +3654,10 @@ status open
 Operators
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3457,7 +3753,10 @@ Out[18]: 2.0      # NOTE: type propotion (n = n * 2)
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3469,6 +3768,10 @@ status open
 Division operators
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3592,7 +3895,10 @@ correct
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3604,6 +3910,10 @@ status open
 Comparison operators
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3704,7 +4014,10 @@ TypeError: unorderable types: complex() > int()
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3716,6 +4029,10 @@ status open
 Strings
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3732,6 +4049,10 @@ immutable
 sequences
 \series default
  of characters
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3750,7 +4071,7 @@ t', '    ')
 
 \end_inset
 
- --> a 
+ –> a 
 \series bold
 new string
 \series default
@@ -3760,6 +4081,10 @@ new string
 \end_deeper
 \begin_layout Itemize
 There are two kind of strings:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3791,6 +4116,10 @@ bytes
 
 \begin_layout Itemize
 conversion between string types requires encoding/decoding
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3839,6 +4168,10 @@ Backward incompatible change in Python 3
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3856,7 +4189,10 @@ Backward incompatible change in Python 3
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3868,6 +4204,10 @@ status open
 String literals
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3979,7 +4319,10 @@ World!
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3994,10 +4337,17 @@ Main string methods
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -4296,7 +4646,10 @@ format
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4308,6 +4661,10 @@ status open
 Other string tools
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4406,7 +4763,10 @@ Out[6]: False, True
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4418,6 +4778,10 @@ status open
 Indexing
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4530,7 +4894,10 @@ In [13]: s[:]            # all elements
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4542,6 +4909,10 @@ status open
 Printf-style string formatting
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4627,6 +4998,10 @@ References
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4648,7 +5023,10 @@ https://docs.python.org/3/library/stdtypes.html
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4662,6 +5040,10 @@ String formatting with
 .format()
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4747,6 +5129,10 @@ References
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4768,7 +5154,10 @@ https://docs.python.org/3/library/string.html
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4783,6 +5172,10 @@ String anti-pattern
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4794,6 +5187,10 @@ status open
 Bad
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4853,6 +5250,10 @@ Good
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4889,7 +5290,10 @@ Out[3]: 'do, re, mi'
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4901,6 +5305,10 @@ status open
 tuple
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4939,6 +5347,10 @@ status open
 tuple literals
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4998,7 +5410,10 @@ Out[6]: (1, 2)
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -5017,6 +5432,10 @@ tuple
 constructor
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -5099,7 +5518,10 @@ In [13]: t = ('ciao',)              # tuple(sequence)
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -5117,6 +5539,10 @@ tuple
  methods
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -5186,7 +5612,10 @@ Out[16]: 2
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -5204,6 +5633,10 @@ tuple
  tools (1/2)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -5288,7 +5721,10 @@ Out[21]: (2, 'x')                   # output is a tuple
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -5306,6 +5742,10 @@ tuple
  tools (2/2)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -5395,7 +5835,10 @@ Out[27]: False
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -5410,6 +5853,10 @@ status open
 list
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -5440,6 +5887,10 @@ status open
 list literals
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -5494,7 +5945,10 @@ Out[5]: [1, 2]
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -5513,6 +5967,10 @@ list
 constructor
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -5595,7 +6053,10 @@ In [12]: L = ['ciao']              # list(sequence)
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -5616,10 +6077,17 @@ list
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -5750,7 +6218,10 @@ None
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -5771,10 +6242,17 @@ list
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -5960,7 +6438,10 @@ Out[13]: ['a', 1, 2]
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -5981,6 +6462,10 @@ list
 \end_inset
 
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -6076,7 +6561,10 @@ Out[19]: (2, 'x')             # output is a tuple
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -6094,6 +6582,10 @@ list
  tools (2/3)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -6199,7 +6691,10 @@ Out[28]: []
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -6217,6 +6712,10 @@ list
  tools (3/3)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -6301,7 +6800,10 @@ Out[29]: True
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -6316,6 +6818,10 @@ status open
 dict
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -6357,6 +6863,10 @@ collections.OrderedDict
 
 \begin_layout Itemize
 Implemented as hash-maps
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -6385,6 +6895,10 @@ mathcal{O}(1)$
 Keys must be 
 \emph on
 hashable
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -6398,7 +6912,10 @@ tuples or frozensets must only contain immutable object
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -6417,6 +6934,10 @@ dict
 constructors and literals
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -6505,7 +7026,10 @@ Out[7]: {3: 'zero', 'b': 'zero', 'a': 'zero'}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -6523,6 +7047,10 @@ dict
  indexing (1/2)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -6602,7 +7130,10 @@ TypeError: unhashable type: 'list'
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -6620,6 +7151,10 @@ dict
  indexing (2/2)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -6691,7 +7226,10 @@ Out[11]: {'b': 2, 'a': 1}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -6712,10 +7250,17 @@ dict
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -6741,15 +7286,15 @@ Python 3
 \end_layout
 
 \begin_layout Itemize
-keys (--> iterator)
+keys (–> iterator)
 \end_layout
 
 \begin_layout Itemize
-values (--> iterator)
+values (–> iterator)
 \end_layout
 
 \begin_layout Itemize
-items (--> iterator)
+items (–> iterator)
 \end_layout
 
 \begin_layout Standard
@@ -6757,27 +7302,27 @@ Python 2
 \end_layout
 
 \begin_layout Itemize
-keys (--> list)
+keys (–> list)
 \end_layout
 
 \begin_layout Itemize
-values (--> list)
+values (–> list)
 \end_layout
 
 \begin_layout Itemize
-items (--> list)
+items (–> list)
 \end_layout
 
 \begin_layout Itemize
-iterkeys (--> iterator)
+iterkeys (–> iterator)
 \end_layout
 
 \begin_layout Itemize
-itervalues (--> iterator)
+itervalues (–> iterator)
 \end_layout
 
 \begin_layout Itemize
-iteritems (--> iterator)
+iteritems (–> iterator)
 \end_layout
 
 \begin_layout Column
@@ -6840,7 +7385,10 @@ clear
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -6858,6 +7406,10 @@ dict
  method examples (1/2)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -6947,7 +7499,10 @@ key='a', value=1
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -6965,6 +7520,10 @@ dict
  method examples (2/2)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -7069,7 +7628,10 @@ Out[11]: {'a': 1, 'bb': 22, 'aa': 11}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -7087,6 +7649,10 @@ dict
  tools
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -7171,7 +7737,10 @@ Out[16]: False
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -7195,6 +7764,10 @@ frozenset
 )
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -7223,6 +7796,10 @@ heterogeneous
 Elements must be 
 \emph on
 hashable
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -7249,7 +7826,10 @@ set
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -7268,6 +7848,10 @@ set
 constructors and literals
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -7361,7 +7945,10 @@ Out[6]: {'ciao'}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -7379,6 +7966,10 @@ set
  tools
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -7472,7 +8063,10 @@ In [6]: for item in set(['item1', 'item2']):
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -7490,6 +8084,10 @@ set
  comparison (1/2)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -7588,7 +8186,10 @@ Out[12]: True
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -7606,6 +8207,10 @@ set
  comparison (2/2)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -7676,7 +8281,10 @@ Out[16]: {'b', 'c', 'e', 'i', 'o', 'u'}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -7697,10 +8305,17 @@ set
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -7836,7 +8451,10 @@ symmetric_difference_update
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -7854,6 +8472,10 @@ set
  method examples (1/2)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -7958,7 +8580,10 @@ Out[7]: {'a', 'e'}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -7976,6 +8601,10 @@ set
  method examples (2/2)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -8080,7 +8709,10 @@ Out[16]: 'o'
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -8092,6 +8724,10 @@ status open
 Other useful containers
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -8111,6 +8747,10 @@ collections
 \end_deeper
 \begin_layout FragileFrame
 \begin_inset VSpace defskip
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -8176,7 +8816,10 @@ In [2]: from collections import namedtuple
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -8188,6 +8831,10 @@ status open
 Mutable vs immutable object
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -8289,7 +8936,10 @@ Out[4]: True      # the same object
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -8301,6 +8951,10 @@ status open
 x Comprehensions
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -8429,7 +9083,10 @@ Out[7]: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -8441,6 +9098,10 @@ status open
 Generator expressions
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -8557,10 +9218,17 @@ If elif else
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -8755,7 +9423,10 @@ pass
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -8770,10 +9441,17 @@ No switch statement
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -8972,7 +9650,10 @@ func()
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -8993,10 +9674,17 @@ for
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -9195,7 +9883,10 @@ break
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -9216,10 +9907,17 @@ while
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -9393,7 +10091,10 @@ break
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -9405,6 +10106,10 @@ status open
 More loops
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -9510,11 +10215,17 @@ s  t  r  i  n  g
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -9535,6 +10246,10 @@ for
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -9546,6 +10261,10 @@ status open
 Bad: indexing
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -9583,7 +10302,7 @@ lower level approach
 \end_layout
 
 \begin_layout Itemize
-not necessary indexing (bound checking --> inefficiency)
+not necessary indexing (bound checking –> inefficiency)
 \end_layout
 
 \begin_layout Itemize
@@ -9617,6 +10336,10 @@ enumerate
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -9643,7 +10366,10 @@ In [1]: for index, item in enumerate(['a', 'b']):
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -9658,10 +10384,17 @@ Exception handling
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -9851,7 +10584,10 @@ else
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -9863,6 +10599,10 @@ status open
 Exception raising
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -9934,7 +10674,10 @@ except ExceptionType as exc:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -9955,10 +10698,17 @@ with
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -10159,7 +10909,10 @@ with lock, open(fname) as fd:
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -10174,6 +10927,10 @@ Iterating on files
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -10185,6 +10942,10 @@ status open
 Iteration of text files
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -10232,7 +10993,10 @@ n')
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -10244,6 +11008,10 @@ status open
 Iteration of binary files
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -10290,7 +11058,10 @@ def simple_copy_file(src, dst):
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -10306,6 +11077,10 @@ io
  module and the like-like interface
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -10365,6 +11140,10 @@ io.open
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -10396,7 +11175,10 @@ open(file, mode='r', buffering=-1, encoding=None,
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -10411,10 +11193,17 @@ File like objects
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -10592,10 +11381,17 @@ Function definition
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -10745,7 +11541,10 @@ return
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -10760,10 +11559,17 @@ Return values
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -10914,7 +11720,10 @@ tuple unpacking can be used to set multiple values in the caller scope
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -10926,6 +11735,10 @@ status open
 Default arguments
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -11000,7 +11813,10 @@ Hello, Antonio!
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -11012,6 +11828,10 @@ status open
 Never use mutable objects for default arguments
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -11030,6 +11850,9 @@ if someone modifies the mutable object it stay modified for all the following
 \end_layout
 
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -11190,7 +12013,10 @@ Out[4]: ([1, 2],)
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -11202,6 +12028,10 @@ status open
 Positional vs keyword arguments
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -11295,7 +12125,10 @@ In [5]: func(*args, **kwargs)    # args unpacking
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -11307,6 +12140,10 @@ status open
 Variable number of arguments (1/2)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -11405,7 +12242,10 @@ def trace(func, *args, **kwargs):
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -11417,6 +12257,10 @@ status open
 Variable number of arguments (2/2)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -11483,7 +12327,10 @@ TRACE: simple_sum --> 60
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -11495,6 +12342,10 @@ status open
 Scopes
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -11533,6 +12384,10 @@ status open
 Example
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -11577,7 +12432,10 @@ Out[3]: 100
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -11589,6 +12447,10 @@ status open
 Closures
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -11608,6 +12470,10 @@ status open
 Example
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -11680,7 +12546,10 @@ Out[5]: 8
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -11692,6 +12561,10 @@ status open
 Decorators
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -11784,7 +12657,10 @@ def trace(func):
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -11796,6 +12672,10 @@ status open
 Decorators what?
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -11835,6 +12715,10 @@ status open
 Example
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -11893,7 +12777,10 @@ DEBUG: do_something --> None
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -11905,6 +12792,10 @@ status open
 Prefer EAFP over LBYL
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -12015,7 +12906,10 @@ def simple_sum_lbyl(a, b):
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -12027,6 +12921,10 @@ status open
 Duck typing
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -12054,6 +12952,9 @@ If it walks like a duck, and talks like a duck, and looks like a duck: it's
 
 \end_deeper
 \begin_layout FragileFrame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -12113,7 +13014,10 @@ Out[4]: 'Hello, World!'
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -12128,10 +13032,17 @@ Duck typing vs C++ templates
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -12218,7 +13129,10 @@ def simple_sum(a, b):
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -12278,7 +13192,10 @@ T simple_sum(const T& a,
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -12294,6 +13211,10 @@ status open
 Modules
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -12369,7 +13290,10 @@ the import process automatically compiles modules (not scripts) into bytecode
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -12381,6 +13305,10 @@ status open
 Packages
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -12474,7 +13402,10 @@ pkg
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -12489,10 +13420,17 @@ Using modules and packages
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -12564,6 +13502,10 @@ status open
 Import examples
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -12644,7 +13586,10 @@ from ..
 \end_deeper
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -12656,6 +13601,10 @@ status open
 Modules search path
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -12679,6 +13628,10 @@ status open
 Path control from code
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -12718,6 +13671,10 @@ Path control from the environment
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -12739,7 +13696,10 @@ export PYTHONPATH=some/path:${PYTHONPATH}
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -12754,10 +13714,17 @@ Using modules as scripts
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -12938,10 +13905,17 @@ class
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -13097,7 +14071,10 @@ self
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -13112,10 +14089,17 @@ self
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -13280,7 +14264,10 @@ unbound methods
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -13295,6 +14282,10 @@ status open
 __init__
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -13330,6 +14321,10 @@ Readability counts
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -13352,7 +14347,10 @@ base.__init__
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -13367,10 +14365,17 @@ Freedom and good judgment
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -13513,7 +14518,10 @@ the fact that it is possible to do something doesn't mean it is a good idea
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -13525,6 +14533,10 @@ status open
 Visibility (public, private, ...)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -13568,6 +14580,10 @@ status open
 Avoiding name clashes
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -13615,7 +14631,10 @@ obj._ClassName__name
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -13627,6 +14646,10 @@ status open
 Visibility examples
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -13732,7 +14755,10 @@ Out[5]: 'safe name'
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -13744,6 +14770,10 @@ status open
 Inheritance
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -13822,7 +14852,10 @@ class Derived(Base):
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -13837,6 +14870,10 @@ status open
 super
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -13918,7 +14955,10 @@ super().__init__(*args, **kwargs)
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -13933,10 +14973,17 @@ Multiple inheritance (1/2)
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -14073,7 +15120,10 @@ Diamond inheritance
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -14085,6 +15135,10 @@ status open
 Multiple inheritance (2/2)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -14133,6 +15187,10 @@ Example
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -14174,7 +15232,10 @@ Root('arg')      # NOTE: Root appears only once
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -14186,6 +15247,10 @@ status open
 Method Resolution Order (MRO)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -14267,6 +15332,10 @@ mro()
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -14313,7 +15382,10 @@ Out[2]: [<class '__main__.Derived'>,
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -14325,6 +15397,10 @@ status open
 Breaking the super chain
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -14351,6 +15427,10 @@ Base1
 ?
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -14389,7 +15469,10 @@ class Base1(Root):
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -14409,6 +15492,10 @@ Root('arg')
  are never called
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -14453,7 +15540,10 @@ Base1('arg')
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -14471,6 +15561,10 @@ object
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -14483,6 +15577,10 @@ object
 \series default
  type was introduced in Python 2.2 to maintain compatibility with the old
  object model:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -14523,6 +15621,12 @@ In short: inheriting form
 object
 \series default
  is
+\family default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -14541,7 +15645,10 @@ recommended in Python 3 if you want to write code that is compatible with
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -14553,6 +15660,10 @@ status open
 Special methods (protocols)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -14573,6 +15684,10 @@ special methods
 
 \begin_layout Itemize
 sometimes special methods receive a special treatment, e.g.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -14728,6 +15843,10 @@ __setitem__
 protocols
 \series default
 :
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -14795,7 +15914,10 @@ __exit__
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -14807,6 +15929,10 @@ status open
 Defining/overloading special methods
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -14873,6 +15999,9 @@ class UserType(object):
 \end_layout
 
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -14973,7 +16102,10 @@ releasing resources
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -14985,6 +16117,10 @@ status open
 Static methods/attributes
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -15084,7 +16220,10 @@ Out[3]: static
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -15096,6 +16235,10 @@ status open
 Properties
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -15140,7 +16283,10 @@ getter/setter methods
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -15152,6 +16298,10 @@ status open
 Properties: use case
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -15243,7 +16393,10 @@ Out[7]: 15.707963267948966 # and the circumference too
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -15255,6 +16408,10 @@ status open
 Defining Properties
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -15371,6 +16528,10 @@ Setting up a virtual environment
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -15462,7 +16623,10 @@ Successfully installed pep8-1.7.0
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -15474,6 +16638,10 @@ status open
 Exercise solution
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -15567,7 +16735,10 @@ def pretty_file_size_str(size):
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -15579,6 +16750,10 @@ status open
 Using doctests
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -15681,7 +16856,10 @@ def pretty_file_size_str(size):
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -15693,6 +16871,10 @@ status open
 Running doctests
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -15796,7 +16978,10 @@ Test passed.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -15808,6 +16993,10 @@ status open
 Exercise solution - Part 2
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -15827,7 +17016,7 @@ if __name__ == '__main__':
 
 \begin_layout Plain Layout
 
-    import os, hashlib
+    import os, hashlib, functools as fts
 \end_layout
 
 \begin_layout Plain Layout
@@ -15887,7 +17076,7 @@ if __name__ == '__main__':
 
 \begin_layout Plain Layout
 
-        for data in fd:
+        for data in iter(fts.partial(fd.read, 2048), b''):
 \end_layout
 
 \begin_layout Plain Layout
@@ -15911,7 +17100,10 @@ if __name__ == '__main__':
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -15923,6 +17115,10 @@ status open
 Output
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -15965,7 +17161,10 @@ prettysize_exercise.py *20623019d6b3bdc22898c9b567262434
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -15980,6 +17179,10 @@ Finding duplicate files
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -15988,8 +17191,7 @@ Problem:
 \end_layout
 
 \begin_layout Itemize
-CLS maintains an FTP site for Sentinel 1 Mission Performance Center (MPC)
- activities
+FTP site for Sentinel 1 data activities
 \end_layout
 
 \begin_layout Itemize
@@ -16010,30 +17212,11 @@ Unfortunately the same product can be present in different directories
  time is stored with different file name
 \end_layout
 
-\begin_layout ExampleBlock
-\begin_inset Argument 2
-status open
-
-\begin_layout Plain Layout
-Example
-\end_layout
-
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
 \end_inset
 
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-
-\family typewriter
-\size scriptsize
-S1A_S6_RAW__0ADH_20120101T034339_20120101T034400_001771_000001_F6EC.SAFE
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Separator
 
 \end_layout
 
@@ -16045,6 +17228,10 @@ status open
 Requirements
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -16078,7 +17265,10 @@ The program shall have a simple command line user interface also having
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -16090,6 +17280,10 @@ status open
 Data structure
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -16124,6 +17318,10 @@ status open
 Example
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -16163,7 +17361,10 @@ result.data = {
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -16175,6 +17376,10 @@ status open
 Test Driven Development approach (TDD)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -16211,6 +17416,10 @@ short development cycles
 
 \begin_layout Itemize
 phases:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -16232,7 +17441,10 @@ refactoring: re-work the code to harmonize all parts of the program and
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -16244,6 +17456,10 @@ status open
 Basic tests for our duplicate file finder
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -16357,7 +17573,10 @@ status open
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -16369,6 +17588,10 @@ status open
 Test directory
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -16403,6 +17626,10 @@ self.DATASET
  replicated in two places
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -16472,7 +17699,10 @@ dataIN
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -16484,6 +17714,10 @@ status open
 Unit testing framework
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -16505,6 +17739,10 @@ unittest
 \begin_layout Itemize
 it is based on the xUnit architecture.
  Main elements
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -16533,6 +17771,10 @@ status open
 Automatic test discovery
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -16570,7 +17812,10 @@ test*.py
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -16586,6 +17831,10 @@ unittest
  package
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -16682,7 +17931,10 @@ if __name__ == '__main__':
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -16694,6 +17946,10 @@ status open
 Mixin classes in Python
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -16773,7 +18029,10 @@ class CreateTestDirMixin(object):
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -16785,6 +18044,10 @@ status open
 Creating the dataset tree
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -16886,7 +18149,10 @@ def _setup_test_dataset(self)
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -16898,6 +18164,10 @@ status open
 Creating dummy files
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -16953,6 +18223,10 @@ Note
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -16981,7 +18255,10 @@ b'
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -16993,6 +18270,10 @@ status open
 Run the test suite
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -17081,6 +18362,10 @@ Note
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -17094,7 +18379,10 @@ s1duplicate.py
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -17106,6 +18394,10 @@ status open
 Step 2: write the code
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -17207,7 +18499,10 @@ def scan_duplicates(dataroot):
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -17224,6 +18519,10 @@ Result
  class
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -17291,6 +18590,10 @@ Test execution
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -17336,7 +18639,10 @@ OK
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -17348,6 +18654,10 @@ status open
 New requirement: computation of wasted disk space
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -17393,6 +18703,10 @@ status open
 Test execution
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -17457,7 +18771,10 @@ FAILED (errors=1)
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -17470,6 +18787,10 @@ New requirement ...
  implementation
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -17542,6 +18863,10 @@ Test execution
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -17577,7 +18902,10 @@ OK
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -17589,6 +18917,10 @@ status open
 Command line interface
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -17689,7 +19021,10 @@ optional arguments:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -17701,6 +19036,10 @@ status open
 Sample output
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -17782,7 +19121,10 @@ defaultdict(<class 'list'>,
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -17794,6 +19136,10 @@ status open
 Unittests for the command line UI (1/3)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -17885,7 +19231,10 @@ class UiTestCase(CreateTestDirMixin, unittest.TestCase):
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -17897,6 +19246,10 @@ status open
 Unittests for the command line UI (2/3)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -17999,7 +19352,10 @@ def test_duplicate_size(self):
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -18015,6 +19371,10 @@ re
 )
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -18113,7 +19473,10 @@ s+: matches one or more (at least one) white character
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -18125,6 +19488,10 @@ status open
 Unittests for the command line UI (3/3)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -18225,7 +19592,10 @@ def test_duplicate_list(self):
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -18237,6 +19607,10 @@ status open
 Command line UI implementation
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -18335,7 +19709,10 @@ parser.add_argument('dataroot', help='the root of the '
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -18347,6 +19724,10 @@ status open
 Main program
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -18447,7 +19828,10 @@ if args.list_files:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -18459,6 +19843,10 @@ status open
 Final test
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -18601,6 +19989,10 @@ status open
 References
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 

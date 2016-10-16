@@ -37,6 +37,7 @@ def pretty_file_size_str(size):
 if __name__ == '__main__':
     import os
     import hashlib
+    import functools
 
     # print the fill module path
     print('filename: {}'.format(os.path.abspath(__file__)))
@@ -46,9 +47,10 @@ if __name__ == '__main__':
     print('size: {}'.format(pretty_file_size_str(size)))
 
     # compute the MD5 checksum
+    BLOCKSIZE = 2048
     md5 = hashlib.md5()
     with open(__file__, 'rb') as fd:
-        for data in fd:
+        for data in iter(functools.partial(fd.read, BLOCKSIZE), b''):
             md5.update(data)
 
     # pront the MD5 checksum of the module file
